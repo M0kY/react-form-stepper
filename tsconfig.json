@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "react-form-stepper": ["src/"]
+    }
+  }
+}

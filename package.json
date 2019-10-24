@@ -1,0 +1,53 @@
+{
+  "name": "react-form-stepper",
+  "description": "React stepper component for multiple step forms",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "M0kY",
+  "main": "dist/index.js",
+  "module": "dist/react-form-stepper.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom",
+    "lint": "tsdx lint"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/jest": "^24.0.19",
+    "@types/react": "^16.9.10",
+    "@types/react-dom": "^16.9.2",
+    "classnames": "^2.2.6",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^3.0.9",
+    "jss-plugin-nested": "^10.0.0",
+    "jss-plugin-rule-value-function": "^10.0.0",
+    "jss-plugin-vendor-prefixer": "^10.0.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-jss": "^10.0.0",
+    "tsdx": "^0.10.5",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.4"
+  }
+}

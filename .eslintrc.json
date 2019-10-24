@@ -1,0 +1,14 @@
+{
+  "extends": ["react-app"],
+  "globals": {
+    "__DEV__": "readonly"
+  },
+  "rules": {
+    "no-trailing-spaces": "error",
+    "no-unused-vars": "error",
+    "no-eval": "error",
+    "no-useless-escape": "error",
+    "no-loop-func": "error",
+    "no-console": "warn"
+  }
+}
