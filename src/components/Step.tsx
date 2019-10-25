@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Connector from './Connector';
 import { StepDTO, StepStyleDTO, StepStyleProps } from '../types';
 import { useStepStyles, stepStyleDefaults } from '../styles';
@@ -8,19 +8,21 @@ interface StepProps extends StepDTO {
   key?: any;
   last?: boolean;
   label?: string;
-  circleContent: any;
   active: boolean;
   completed: boolean;
   styleConfig?: StepStyleDTO;
+  className?: string;
 }
 
 const Step: React.FC<StepProps> = ({
-  circleContent,
+  children,
   label,
   last,
   styleConfig,
   completed,
   active,
+  className,
+  ...rest
 }) => {
   const stepStyleProps: StepStyleProps = { ...styleConfig!, completed, active };
   const classes = useStepStyles(stepStyleProps);
@@ -29,19 +31,27 @@ const Step: React.FC<StepProps> = ({
     <div className={classes.StepContainer}>
       {!last && <Connector completed={completed} />}
       <div className={classes.StepMain}>
-        <div
-          className={classNames(classes.StepCircle, { active }, { completed })}
+        <button
+          disabled={!active && !completed}
+          className={clsx(
+            classes.StepCircle,
+            classes.StepButton,
+            { active },
+            { completed },
+            className
+          )}
+          {...rest}
         >
           <span
-            className={classNames(
+            className={clsx(
               classes.StepCircleContent,
               { active },
               { completed }
             )}
           >
-            {circleContent}
+            {children}
           </span>
-        </div>
+        </button>
         {label && (
           <div className={classes.LabelContainer}>
             <span className={classes.Label}>{label}</span>

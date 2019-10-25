@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { jss } from 'react-jss';
 import vendorPrefixer from 'jss-plugin-vendor-prefixer';
 import nested from 'jss-plugin-nested';
+import clsx from 'clsx';
 import { GenerateId, CreateGenerateId } from 'jss';
 import Step from './Step';
 import { StepDTO, StepStyleDTO } from '../types';
@@ -11,6 +12,8 @@ interface StepperProps {
   steps?: StepDTO[];
   activeStep: number;
   children?: ReactNode;
+  className?: string;
+  stepClassName?: string;
   styleConfig?: StepStyleDTO;
 }
 
@@ -27,6 +30,8 @@ jss.use(nested());
 const Stepper: React.FC<StepperProps> = ({
   steps,
   children,
+  className,
+  stepClassName,
   activeStep,
   styleConfig,
 }) => {
@@ -41,7 +46,8 @@ const Stepper: React.FC<StepperProps> = ({
   ) => {
     return {
       key: index,
-      circleContent: index,
+      className: stepClassName,
+      children: index,
       completed: index < activeStep,
       active: index === activeStep,
       last: index + 1 === arrayLength,
@@ -67,11 +73,17 @@ const Stepper: React.FC<StepperProps> = ({
     });
   }
 
-  return <div className={classes.StepperContainer}>{stepsToRender}</div>;
+  return (
+    <div className={clsx(classes.StepperContainer, className)}>
+      {stepsToRender}
+    </div>
+  );
 };
 
 Stepper.defaultProps = {
   activeStep: 0,
+  className: '',
+  stepClassName: '',
   styleConfig: stepStyleDefaults,
 };
 

@@ -53,6 +53,12 @@ export const useStepStyles = createUseStyles({
       backgroundColor: props.completedBgColor,
     },
   }),
+  StepButton: {
+    border: 'none',
+    margin: 0,
+    padding: 0,
+    cursor: 'pointer',
+  },
   StepCircleContent: (props: StepStyleProps) => ({
     color: props.inactiveTextColor,
     fontSize: props.circleFontSize,

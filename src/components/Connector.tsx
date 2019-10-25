@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useConnectorStyles } from '../styles';
 import { ConnectorStyleProps } from '../types';
 
@@ -12,7 +12,7 @@ const Connector: React.FC<ConnectorProps> = ({ completed, connectorStyle }) => {
   const classes = useConnectorStyles({ ...connectorStyle, completed });
   return (
     <div className={classes.ConnectorContainer}>
-      <span className={classNames(classes.Connector, { completed })}></span>
+      <span className={clsx(classes.Connector, { completed })}></span>
     </div>
   );
 };
