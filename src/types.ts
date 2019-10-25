@@ -1,12 +1,9 @@
-import { JSXElement } from '@babel/types';
-
 export interface StepState {
   active: boolean;
   completed: boolean;
 }
 
 export interface StepDTO extends StepState {
-  icon?: HTMLElement | JSXElement | string;
   label?: string;
 }
 

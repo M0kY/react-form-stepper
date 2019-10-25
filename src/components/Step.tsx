@@ -7,9 +7,6 @@ import { useStepStyles, stepStyleDefaults } from '../styles';
 interface StepProps extends StepDTO {
   key?: any;
   last?: boolean;
-  label?: string;
-  active: boolean;
-  completed: boolean;
   styleConfig?: StepStyleDTO;
   className?: string;
 }
