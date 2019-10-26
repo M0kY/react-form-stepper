@@ -1,0 +1,12 @@
+{
+  "extends": [
+    ":pinOnlyDevDependencies"
+  ],
+  "semanticCommits": true,
+  "timezone": "Europe/Zagreb",
+  "schedule": "every weekend",
+  "rebaseStalePrs": true,
+  "updateNotScheduled": false,
+  "prCreation": "not-pending",
+  "automerge": "minor"
+}
