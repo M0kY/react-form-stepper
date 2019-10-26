@@ -25,12 +25,12 @@
     }
   },
   "devDependencies": {
-    "@types/jest": "^24.0.19",
-    "@types/react": "^16.9.10",
-    "@types/react-dom": "^16.9.2",
+    "@types/jest": "^24.0.20",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
     "clsx": "^1.0.4",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
     "eslint-config-react-app": "^5.0.2",
     "eslint-plugin-flowtype": "^3.13.0",
     "eslint-plugin-import": "^2.18.2",
