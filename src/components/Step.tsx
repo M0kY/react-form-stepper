@@ -13,11 +13,11 @@ interface StepProps extends StepDTO {
 
 const Step: React.FC<StepProps> = ({
   children,
-  label,
+  label = '',
   last,
-  styleConfig,
-  completed,
-  active,
+  styleConfig = stepStyleDefaults,
+  completed = false,
+  active = false,
   className,
   ...rest
 }) => {
@@ -57,11 +57,6 @@ const Step: React.FC<StepProps> = ({
       </div>
     </div>
   );
-};
-
-Step.defaultProps = {
-  label: '',
-  styleConfig: stepStyleDefaults,
 };
 
 export default Step;

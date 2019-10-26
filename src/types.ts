@@ -3,8 +3,10 @@ export interface StepState {
   completed: boolean;
 }
 
-export interface StepDTO extends StepState {
+export interface StepDTO {
   label?: string;
+  active?: boolean;
+  completed?: boolean;
 }
 
 export interface StepStyleDTO {

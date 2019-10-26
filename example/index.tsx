@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Stepper, Step } from 'react-form-stepper';
+import { Stepper, Step } from '../dist';
 
 const App: React.FC = () => {
   return (
@@ -11,8 +11,8 @@ const App: React.FC = () => {
         activeStep={1}
       >
         <Step label="Children Step 1" />
-        <Step label="Children Step 1" />
-        <Step label="Children Step 1" />
+        <Step label="Children Step 2" />
+        <Step label="Children Step 3" />
       </Stepper>
     </div>
   );
