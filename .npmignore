@@ -57,6 +57,12 @@ node_modules/
 # Build directory
 dist
 
+# Test directory
+test
+
+# Examples directory
+examples
+
 # gh-pages
 _gh-pages
 
