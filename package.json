@@ -1,7 +1,7 @@
 {
   "name": "react-form-stepper",
   "description": "React stepper component for multiple step forms",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "M0kY",
   "main": "dist/index.js",
