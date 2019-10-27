@@ -88,8 +88,8 @@ export const useConnectorStyles = createUseStyles({
   ConnectorContainer: {
     flex: '1 1 auto',
     top: 16,
-    left: 'calc(50% + 20px)',
-    right: 'calc(-50% + 20px)',
+    left: 'calc(-50% + 20px)',
+    right: 'calc(50% + 20px)',
     position: 'absolute',
   },
   Connector: (props: ConnectorStyleProps) => ({
@@ -99,6 +99,9 @@ export const useConnectorStyles = createUseStyles({
     display: 'block',
     '&.completed': {
       borderColor: props.completedColor,
+    },
+    '&.active': {
+      borderColor: props.activeColor,
     },
   }),
 });

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { jss } from 'react-jss';
 import vendorPrefixer from 'jss-plugin-vendor-prefixer';
 import nested from 'jss-plugin-nested';
@@ -11,7 +11,7 @@ import { useStepperStyles, stepStyleDefaults } from '../styles';
 interface StepperProps {
   steps?: StepDTO[];
   activeStep: number;
-  children?: ReactNode;
+  connectorStateColors?: boolean;
   className?: string;
   stepClassName?: string;
   styleConfig?: StepStyleDTO;
@@ -30,27 +30,25 @@ jss.use(nested());
 const Stepper: React.FC<StepperProps> = ({
   steps,
   children,
-  className,
-  stepClassName,
-  activeStep,
-  styleConfig,
+  connectorStateColors = false,
+  className = '',
+  stepClassName = '',
+  activeStep = 0,
+  styleConfig = stepStyleDefaults,
 }) => {
   const classes = useStepperStyles();
 
   const childrenSteps = React.Children.toArray(children);
 
-  const generateStepProps = (
-    index: number,
-    activeStep: number,
-    arrayLength: number
-  ) => {
+  const generateStepProps = (index: number, activeStep: number) => {
     return {
       key: index,
       className: stepClassName,
       children: index,
       completed: index < activeStep,
       active: index === activeStep,
-      last: index + 1 === arrayLength,
+      connectorStateColors,
+      first: index === 0,
       styleConfig,
     };
   };
@@ -59,13 +57,13 @@ const Stepper: React.FC<StepperProps> = ({
 
   if (steps && steps.length > 0) {
     stepsToRender = steps.map((step, index) => (
-      <Step {...generateStepProps(index, activeStep, steps.length)} {...step} />
+      <Step {...generateStepProps(index, activeStep)} {...step} />
     ));
   } else {
     stepsToRender = childrenSteps.map((childStep, index) => {
       if (React.isValidElement(childStep)) {
         return React.cloneElement(childStep, {
-          ...generateStepProps(index, activeStep, childrenSteps.length),
+          ...generateStepProps(index, activeStep),
           ...childStep.props,
         });
       }
@@ -78,13 +76,6 @@ const Stepper: React.FC<StepperProps> = ({
       {stepsToRender}
     </div>
   );
-};
-
-Stepper.defaultProps = {
-  activeStep: 0,
-  className: '',
-  stepClassName: '',
-  styleConfig: stepStyleDefaults,
 };
 
 export default Stepper;

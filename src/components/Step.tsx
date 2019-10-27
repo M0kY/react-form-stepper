@@ -6,7 +6,8 @@ import { useStepStyles, stepStyleDefaults } from '../styles';
 
 interface StepProps extends StepDTO {
   key?: any;
-  last?: boolean;
+  first?: boolean;
+  connectorStateColors?: boolean;
   styleConfig?: StepStyleDTO;
   className?: string;
 }
@@ -14,8 +15,9 @@ interface StepProps extends StepDTO {
 const Step: React.FC<StepProps> = ({
   children,
   label = '',
-  last,
+  first,
   styleConfig = stepStyleDefaults,
+  connectorStateColors = false,
   completed = false,
   active = false,
   className,
@@ -26,7 +28,13 @@ const Step: React.FC<StepProps> = ({
 
   return (
     <div className={classes.StepContainer}>
-      {!last && <Connector completed={completed} />}
+      {!first && (
+        <Connector
+          completed={completed}
+          active={active}
+          stateColors={connectorStateColors}
+        />
+      )}
       <div className={classes.StepMain}>
         <button
           disabled={!active && !completed}

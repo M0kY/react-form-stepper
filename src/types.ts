@@ -28,6 +28,7 @@ export interface StepStyleProps extends StepStyleDTO, StepState {}
 
 export interface ConnectorStyleProps {
   disabledColor: string;
+  activeColor: string;
   completedColor: string;
   size: string | number;
   style: string;
