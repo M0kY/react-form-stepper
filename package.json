@@ -22,7 +22,7 @@
     "version:minor": "npm --no-git-tag-version version minor",
     "version:major": "npm --no-git-tag-version version major",
     "preversion": "npm run test",
-    "postversion": "npm run changelog && cross-var git commit package.json CHANGELOG.md -m \"chore(release): version $npm_package_version\" && npm run tag && git push && git push --tags",
+    "postversion": "npm run changelog && cross-var git commit package.json CHANGELOG.md -m \"chore(release): version $npm_package_version\" && npm run tag && git push && git push --tags && npm publish --registry=https://registry.npmjs.org/",
     "prepublish": "in-publish && safe-publish-latest && npm run build || not-in-publish",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
