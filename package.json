@@ -17,14 +17,14 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
     "lint": "tsdx lint",
-    "tag": "git tag v$npm_package_version",
+    "tag": "cross-var git tag v$npm_package_version",
     "version:patch": "npm --no-git-tag-version version patch",
     "version:minor": "npm --no-git-tag-version version minor",
     "version:major": "npm --no-git-tag-version version major",
-    "preversion": "npm run test && npm run changelog",
-    "postversion": "git commit package.json CHANGELOG.md -m \"Version $npm_package_version\" && npm run tag && git push && git push --tags",
+    "preversion": "npm run test",
+    "postversion": "npm run changelog && cross-var git commit package.json CHANGELOG.md -m \"chore(release): version $npm_package_version\" && npm run tag && git push && git push --tags",
     "prepublish": "in-publish && safe-publish-latest && npm run build || not-in-publish",
-    "changelog": "conventional-changelog -p jscs -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -43,6 +43,7 @@
     "@types/react-dom": "^16.9.3",
     "clsx": "^1.0.4",
     "conventional-changelog-cli": "^2.0.25",
+    "cross-var": "^1.1.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-config-react-app": "^5.0.2",
