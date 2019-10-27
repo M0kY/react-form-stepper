@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf dist",
     "start": "tsdx watch",
     "prebuild": "npm run clean && npm run lint && npm run test",
     "build": "tsdx build",
