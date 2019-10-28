@@ -1,1 +1,81 @@
 # react-form-stepper
+
+A simple react stepper component for multi-step forms inspired by the Stepper component from Material-UI.
+
+![react-form-stepper preview](https://raw.githubusercontent.com/M0kY/react-form-stepper/master/react-form-stepper-demo.png)
+
+## Getting started
+
+## Usage
+
+```js
+import { Stepper } from 'react-form-stepper';
+```
+
+There are 2 possible ways of defining the steps in the Stepper component:
+
+- Using the `steps` prop
+- Using the `Stepper` as a HOC with `Step` as children
+
+### Using the steps prop
+
+```js
+<Stepper
+  steps={[{ label: 'Step 1' }, { label: 'Step 2' }, { label: 'Step 3' }]}
+  activeStep={2}
+/>
+```
+
+### Using the Stepper as a HOC with Step as children
+
+```js
+<Stepper activeStep={1}>
+  <Step label="Children Step 1" />
+  <Step label="Children Step 2" />
+  <Step label="Children Step 3" />
+</Stepper>
+```
+
+### Stepper props
+
+| Props                | Options      | Default | Description                                                            |
+| -------------------- | ------------ | ------- | ---------------------------------------------------------------------- |
+| steps                | \[StepsDTO\] | none    | Array of objecst defining the steps                                    |
+| activeStep           | number       | 0       | Value defining the active step                                         |
+| connectorStateColors | boolean      | false   | Use different colors for connector lines based on adjacent steps state |
+| className            | string       | none    | Add css classes to the Stepper component                               |
+| styleConfig          | StepStyleDTO | ---     | Object containing Step style defaults                                  |
+
+### StepsDTO
+
+| Props     | Options | Default | Description                                                 |
+| --------- | ------- | ------- | ----------------------------------------------------------- |
+| label     | string  | ''      | Value to be displayed under each step                       |
+| active    | boolean | false   | Value to indicate should the step be displayed as active    |
+| completed | boolean | false   | Value to indicate should the step be displayed as completed |
+
+### StepStyleDTO
+
+| Props              | Options          | Default    | Description                                             |
+| ------------------ | ---------------- | ---------- | ------------------------------------------------------- |
+| activeBgColor      | string           | '#ed1d24'  | Define the background color for active steps            |
+| activeTextColor    | string           | '#ffffff'  | Define the text color for active steps                  |
+| completedBgColor   | string           | '#a10308'  | Define the background color for completed steps         |
+| completedTextColor | string           | '#ffffff'  | Define the background color for completed steps         |
+| inactiveBgColor    | string           | '#e0e0e0'  | Define the background color for inactive steps          |
+| inactiveTextColor  | string           | '#ffffff'  | Define the background color for inactive steps          |
+| size               | string or number | '2em'      | Value representing the `width` and `height` of the step |
+| circleFontSize     | string or number | '1rem'     | Font size of the step content                           |
+| labelFontSize      | string or number | '0.875rem' | Font size of step labels                                |
+| borderRadius       | string or number | '50%'      | Step border radius                                      |
+| fontWeight         | string or number | 500        | Step label font weight                                  |
+
+### Step props
+
+| Props     | Options         | Default    | Description                                                 |
+| --------- | --------------- | ---------- | ----------------------------------------------------------- |
+| label     | string          | ''         | Value to be displayed under each step                       |
+| active    | boolean         | false      | Value to indicate should the step be displayed as active    |
+| completed | boolean         | false      | Value to indicate should the step be displayed as completed |
+| className | string          | none       | Add css classes to the Step component                       |
+| children  | React.ReactNode | Step index | Value inside the step                                       |

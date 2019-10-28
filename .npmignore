@@ -63,6 +63,9 @@ test
 # Examples directory
 examples
 
+# README image
+react-form-stepper-demo.png
+
 # gh-pages
 _gh-pages
 
