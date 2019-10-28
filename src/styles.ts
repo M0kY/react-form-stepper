@@ -9,6 +9,12 @@ export const useStepperStyles = createUseStyles({
     padding: 24,
     fontFamily: 'Arial, Helvetica, sans-serif',
   },
+  StepContainer: {
+    flex: 1,
+    position: 'relative',
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
 });
 
 export const stepStyleDefaults = {
@@ -26,12 +32,6 @@ export const stepStyleDefaults = {
 };
 
 export const useStepStyles = createUseStyles({
-  StepContainer: {
-    flex: 1,
-    position: 'relative',
-    paddingLeft: 8,
-    paddingRight: 8,
-  },
   StepMain: {
     display: 'flex',
     flexDirection: 'column',

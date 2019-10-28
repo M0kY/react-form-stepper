@@ -3,6 +3,7 @@ import { jss } from 'react-jss';
 import clsx from 'clsx';
 import { GenerateId, CreateGenerateId } from 'jss';
 import Step from './Step';
+import Connector from './Connector';
 import { StepDTO, StepStyleDTO } from '../types';
 import { useStepperStyles, stepStyleDefaults } from '../styles';
 
@@ -58,10 +59,22 @@ const Stepper: React.FC<StepperProps> = ({
   } else {
     stepsToRender = childrenSteps.map((childStep, index) => {
       if (React.isValidElement(childStep)) {
-        return React.cloneElement(childStep, {
-          ...generateStepProps(index, activeStep),
-          ...childStep.props,
-        });
+        const stepProps = generateStepProps(index, activeStep);
+        return (
+          <div className={classes.StepContainer}>
+            {index !== 0 && (
+              <Connector
+                completed={stepProps.completed}
+                active={stepProps.active}
+                stateColors={connectorStateColors}
+              />
+            )}
+            {React.cloneElement(childStep, {
+              ...stepProps,
+              ...childStep.props,
+            })}
+          </div>
+        );
       }
       return null;
     });

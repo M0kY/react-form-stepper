@@ -1,6 +1,5 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import Connector from './Connector';
 import { StepDTO, StepStyleDTO, StepStyleProps } from '../types';
 import { useStepStyles, stepStyleDefaults } from '../styles';
 
@@ -27,42 +26,29 @@ const Step: React.FC<StepProps> = ({
   const classes = useStepStyles(stepStyleProps);
 
   return (
-    <div className={classes.StepContainer}>
-      {!first && (
-        <Connector
-          completed={completed}
-          active={active}
-          stateColors={connectorStateColors}
-        />
-      )}
-      <div className={classes.StepMain}>
-        <button
-          disabled={!active && !completed}
-          className={clsx(
-            classes.StepCircle,
-            classes.StepButton,
-            { active },
-            { completed },
-            className
-          )}
-          {...rest}
-        >
-          <span
-            className={clsx(
-              classes.StepCircleContent,
-              { active },
-              { completed }
-            )}
-          >
-            {children}
-          </span>
-        </button>
-        {label && (
-          <div className={classes.LabelContainer}>
-            <span className={classes.Label}>{label}</span>
-          </div>
+    <div className={classes.StepMain}>
+      <button
+        disabled={!active && !completed}
+        className={clsx(
+          classes.StepCircle,
+          classes.StepButton,
+          { active },
+          { completed },
+          className
         )}
-      </div>
+        {...rest}
+      >
+        <span
+          className={clsx(classes.StepCircleContent, { active }, { completed })}
+        >
+          {children}
+        </span>
+      </button>
+      {label && (
+        <div className={classes.LabelContainer}>
+          <span className={classes.Label}>{label}</span>
+        </div>
+      )}
     </div>
   );
 };
