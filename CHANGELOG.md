@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/M0kY/react-form-stepper/compare/v1.0.0...v1.1.0) (2019-10-28)
+
+
+### Bug Fixes
+
+* **deps:** move requried deps to prod and removed not needed ones ([75facfc](https://github.com/M0kY/react-form-stepper/commit/75facfc))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/M0kY/react-form-stepper/compare/v0.2.0...v1.0.0) (2019-10-28)
 
