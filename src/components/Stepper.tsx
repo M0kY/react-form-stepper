@@ -44,8 +44,6 @@ const Stepper: React.FC<StepperProps> = ({
       children: index,
       completed: index < activeStep,
       active: index === activeStep,
-      connectorStateColors,
-      first: index === 0,
       styleConfig,
     };
   };

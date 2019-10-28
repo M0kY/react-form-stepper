@@ -5,7 +5,6 @@ import { useStepStyles, stepStyleDefaults } from '../styles';
 
 interface StepProps extends StepDTO {
   key?: any;
-  first?: boolean;
   connectorStateColors?: boolean;
   styleConfig?: StepStyleDTO;
   className?: string;
@@ -14,9 +13,7 @@ interface StepProps extends StepDTO {
 const Step: React.FC<StepProps> = ({
   children,
   label = '',
-  first,
   styleConfig = stepStyleDefaults,
-  connectorStateColors = false,
   completed = false,
   active = false,
   className,
