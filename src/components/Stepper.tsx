@@ -1,7 +1,5 @@
 import React from 'react';
 import { jss } from 'react-jss';
-import vendorPrefixer from 'jss-plugin-vendor-prefixer';
-import nested from 'jss-plugin-nested';
 import clsx from 'clsx';
 import { GenerateId, CreateGenerateId } from 'jss';
 import Step from './Step';
@@ -24,8 +22,6 @@ const createGenerateId: CreateGenerateId = () => {
 };
 
 jss.setup({ createGenerateId });
-jss.use(vendorPrefixer());
-jss.use(nested());
 
 const Stepper: React.FC<StepperProps> = ({
   steps,
