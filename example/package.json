@@ -19,7 +19,6 @@
     "@types/react-dom": "../node_modules/@types/react-dom"
   },
   "devDependencies": {
-    "jss-plugin-rule-value-function": "^10.0.0",
     "parcel": "^1.12.3"
   }
 }
