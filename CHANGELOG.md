@@ -1,3 +1,8 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/M0kY/react-form-stepper/compare/v0.2.0...v1.0.0) (2019-10-28)
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/M0kY/react-form-stepper/compare/v0.1.1...v0.2.0) (2019-10-27)
 
