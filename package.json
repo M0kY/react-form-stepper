@@ -2,8 +2,24 @@
   "name": "react-form-stepper",
   "description": "React stepper component for multiple step forms",
   "version": "1.0.0",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M0kY/react-form-stepper.git"
+  },
   "author": "M0kY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M0kY/react-form-stepper/issues"
+  },
+  "homepage": "https://github.com/M0kY/react-form-stepper#readme",
+  "keywords": [
+    "react",
+    "component",
+    "stepper",
+    "form",
+    "step",
+    "wizard"
+  ],
   "main": "dist/index.js",
   "module": "dist/react-form-stepper.esm.js",
   "typings": "dist/index.d.ts",
