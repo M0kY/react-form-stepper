@@ -4,7 +4,6 @@ import { StepDTO, StepStyleDTO, StepStyleProps } from '../types';
 import { useStepStyles, stepStyleDefaults } from '../styles';
 
 interface StepProps extends StepDTO {
-  key?: any;
   connectorStateColors?: boolean;
   styleConfig?: StepStyleDTO;
   className?: string;

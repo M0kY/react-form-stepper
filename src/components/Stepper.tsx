@@ -39,7 +39,6 @@ const Stepper: React.FC<StepperProps> = ({
 
   const generateStepProps = (index: number, activeStep: number) => {
     return {
-      key: index,
       className: stepClassName,
       children: index,
       completed: index < activeStep,
@@ -54,7 +53,7 @@ const Stepper: React.FC<StepperProps> = ({
     stepsToRender = steps.map((step, index) => {
       const stepProps = generateStepProps(index, activeStep);
       return (
-        <div className={classes.StepContainer}>
+        <div key={index} className={classes.StepContainer}>
           {index !== 0 && (
             <Connector
               completed={stepProps.completed}
@@ -71,7 +70,7 @@ const Stepper: React.FC<StepperProps> = ({
       if (React.isValidElement(childStep)) {
         const stepProps = generateStepProps(index, activeStep);
         return (
-          <div className={classes.StepContainer}>
+          <div key={index} className={classes.StepContainer}>
             {index !== 0 && (
               <Connector
                 completed={stepProps.completed}
