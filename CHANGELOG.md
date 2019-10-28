@@ -1,3 +1,14 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/M0kY/react-form-stepper/compare/v1.1.0...v1.1.1) (2019-10-28)
+
+
+### Bug Fixes
+
+* move key prop due to refactor ([d477a7e](https://github.com/M0kY/react-form-stepper/commit/d477a7e))
+* pass correct props to Connector when steps prop is used ([d508800](https://github.com/M0kY/react-form-stepper/commit/d508800))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/M0kY/react-form-stepper/compare/v1.0.0...v1.1.0) (2019-10-28)
 
