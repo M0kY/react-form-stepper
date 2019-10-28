@@ -1,10 +1,30 @@
 # react-form-stepper
 
+![version](https://img.shields.io/npm/v/react-form-stepper?color=green)
+[![dependencies Status](https://david-dm.org/M0kY/react-form-stepper/status.svg)](https://david-dm.org/M0kY/react-form-stepper)
+[![devDependencies Status](https://david-dm.org/M0kY/react-form-stepper/dev-status.svg)](https://david-dm.org/M0kY/react-form-stepper?type=dev)
+![License](https://img.shields.io/npm/l/react-form-stepper)
+![Downloads](https://img.shields.io/npm/dm/react-form-stepper)
+
+[![NPM](https://nodei.co/npm/react-form-stepper.png?downloads=true&stars=true)](https://nodei.co/npm/react-form-stepper/)
+
 A simple react stepper component for multi-step forms inspired by the Stepper component from Material-UI.
 
 ![react-form-stepper preview](https://raw.githubusercontent.com/M0kY/react-form-stepper/master/react-form-stepper-demo.png)
 
 ## Getting started
+
+Install the library by running:
+
+```sh
+npm install react-form-stepper --save
+```
+
+or
+
+```sh
+yarn add react-form-stepper
+```
 
 ## Usage
 
