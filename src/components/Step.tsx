@@ -12,14 +12,18 @@ interface StepProps extends StepDTO {
 const Step: React.FC<StepProps> = ({
   children,
   label = '',
-  styleConfig = stepStyleDefaults,
+  styleConfig,
   completed = false,
   active = false,
   className,
   ...rest
 }) => {
   const stepStyleProps: StepStyleProps = { ...styleConfig!, completed, active };
-  const classes = useStepStyles(stepStyleProps);
+  const classes = useStepStyles({
+    ...stepStyleDefaults,
+    circleFontSize: `calc(${stepStyleProps.size} / 2)`,
+    ...stepStyleProps,
+  });
 
   return (
     <div className={classes.StepMain}>

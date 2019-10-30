@@ -4,8 +4,12 @@ import clsx from 'clsx';
 import { GenerateId, CreateGenerateId } from 'jss';
 import Step from './Step';
 import Connector from './Connector';
-import { StepDTO, StepStyleDTO } from '../types';
-import { useStepperStyles, stepStyleDefaults } from '../styles';
+import { StepDTO, StepStyleDTO, ConnectorStyleProps } from '../types';
+import {
+  useStepperStyles,
+  stepStyleDefaults,
+  connectorStyleDefaults,
+} from '../styles';
 
 interface StepperProps {
   steps?: StepDTO[];
@@ -14,6 +18,7 @@ interface StepperProps {
   className?: string;
   stepClassName?: string;
   styleConfig?: StepStyleDTO;
+  connectorStyleConfig?: ConnectorStyleProps;
 }
 
 const generateId: GenerateId = rule => `RFS-${rule.key}`;
@@ -31,7 +36,8 @@ const Stepper: React.FC<StepperProps> = ({
   className = '',
   stepClassName = '',
   activeStep = 0,
-  styleConfig = stepStyleDefaults,
+  styleConfig,
+  connectorStyleConfig,
 }) => {
   const classes = useStepperStyles();
 
@@ -59,6 +65,12 @@ const Stepper: React.FC<StepperProps> = ({
               completed={stepProps.completed}
               active={stepProps.active}
               stateColors={connectorStateColors}
+              connectorStyle={{
+                ...connectorStyleDefaults,
+                ...connectorStyleConfig,
+                stepSize:
+                  (styleConfig && styleConfig.size) || stepStyleDefaults.size,
+              }}
             />
           )}
           <Step {...stepProps} {...step} />
@@ -76,6 +88,12 @@ const Stepper: React.FC<StepperProps> = ({
                 completed={stepProps.completed}
                 active={stepProps.active}
                 stateColors={connectorStateColors}
+                connectorStyle={{
+                  ...connectorStyleDefaults,
+                  ...connectorStyleConfig,
+                  stepSize:
+                    (styleConfig && styleConfig.size) || stepStyleDefaults.size,
+                }}
               />
             )}
             {React.cloneElement(childStep, {

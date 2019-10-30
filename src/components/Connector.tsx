@@ -14,15 +14,9 @@ const Connector: React.FC<ConnectorProps> = ({
   completed = false,
   active = false,
   stateColors = false,
-  connectorStyle = {
-    disabledColor: '#bdbdbd',
-    activeColor: '#ed1d24',
-    completedColor: '#a10308',
-    size: 1,
-    style: 'solid',
-  },
+  connectorStyle,
 }) => {
-  const classes = useConnectorStyles({ ...connectorStyle, completed });
+  const classes = useConnectorStyles(connectorStyle);
   return (
     <div className={classes.ConnectorContainer}>
       <span

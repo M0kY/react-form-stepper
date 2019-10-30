@@ -30,6 +30,7 @@ export interface ConnectorStyleProps {
   disabledColor: string;
   activeColor: string;
   completedColor: string;
-  size: string | number;
+  size: React.ReactText;
+  stepSize: React.ReactText;
   style: string;
 }

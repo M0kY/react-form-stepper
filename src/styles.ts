@@ -84,14 +84,21 @@ export const useStepStyles = createUseStyles({
   }),
 });
 
+export const connectorStyleDefaults = {
+  disabledColor: '#bdbdbd',
+  activeColor: '#ed1d24',
+  completedColor: '#a10308',
+  size: 1,
+  style: 'solid',
+};
+
 export const useConnectorStyles = createUseStyles({
-  ConnectorContainer: {
-    flex: '1 1 auto',
-    top: 16,
-    left: 'calc(-50% + 20px)',
-    right: 'calc(50% + 20px)',
+  ConnectorContainer: (props: ConnectorStyleProps) => ({
+    top: `calc(${props.stepSize} / 2)`,
+    left: `calc(-50% + ${props.stepSize} - 8px)`,
+    right: `calc(50% + ${props.stepSize} - 8px)`,
     position: 'absolute',
-  },
+  }),
   Connector: (props: ConnectorStyleProps) => ({
     borderTopStyle: props.style,
     borderTopWidth: props.size,
