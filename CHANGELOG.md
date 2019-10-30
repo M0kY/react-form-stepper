@@ -1,3 +1,13 @@
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/M0kY/react-form-stepper/compare/v1.1.1...v1.1.2) (2019-10-30)
+
+
+### Bug Fixes
+
+* **connector:** props passing and connector style param calculation ([60cd877](https://github.com/M0kY/react-form-stepper/commit/60cd877))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/M0kY/react-form-stepper/compare/v1.1.0...v1.1.1) (2019-10-28)
 
