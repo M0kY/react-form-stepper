@@ -17,16 +17,17 @@ export interface StepStyleDTO {
   completedTextColor: string;
   inactiveBgColor: string;
   inactiveTextColor: string;
-  size: string | number;
-  circleFontSize: string | number;
-  labelFontSize: string | number;
-  borderRadius: string | number;
-  fontWeight: string | number;
+  size: React.ReactText;
+  circleFontSize: React.ReactText;
+  labelFontSize: React.ReactText;
+  borderRadius: React.ReactText;
+  fontWeight: React.ReactText;
 }
 
 export interface StepStyleProps extends StepStyleDTO, StepState {}
 
 export interface ConnectorStyleProps {
+  [key: string]: any;
   disabledColor: string;
   activeColor: string;
   completedColor: string;

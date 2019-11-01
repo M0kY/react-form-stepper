@@ -7,7 +7,7 @@ interface ConnectorProps {
   completed?: boolean;
   active?: boolean;
   stateColors?: boolean;
-  connectorStyle?: ConnectorStyleProps;
+  connectorStyle: ConnectorStyleProps;
 }
 
 const Connector: React.FC<ConnectorProps> = ({
@@ -16,6 +16,18 @@ const Connector: React.FC<ConnectorProps> = ({
   stateColors = false,
   connectorStyle,
 }) => {
+  const convertNumericToPixel = (
+    object: ConnectorStyleProps,
+    property: string
+  ) => {
+    if (typeof object[property] === 'number') {
+      object[property] = `${object[property]}px`;
+    }
+  };
+
+  convertNumericToPixel(connectorStyle, 'stepSize');
+  convertNumericToPixel(connectorStyle, 'size');
+
   const classes = useConnectorStyles(connectorStyle);
   return (
     <div className={classes.ConnectorContainer}>

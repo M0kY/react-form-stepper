@@ -94,7 +94,7 @@ export const connectorStyleDefaults = {
 
 export const useConnectorStyles = createUseStyles({
   ConnectorContainer: (props: ConnectorStyleProps) => ({
-    top: `calc(${props.stepSize} / 2)`,
+    top: `calc((${props.stepSize} - ${props.size}) / 2)`,
     left: `calc(-50% + ${props.stepSize} - 8px)`,
     right: `calc(50% + ${props.stepSize} - 8px)`,
     position: 'absolute',
