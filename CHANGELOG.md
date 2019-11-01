@@ -1,3 +1,13 @@
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/M0kY/react-form-stepper/compare/v1.1.2...v1.1.3) (2019-11-01)
+
+
+### Bug Fixes
+
+* **connector:** connector vertical align calculation ([fe3fb26](https://github.com/M0kY/react-form-stepper/commit/fe3fb26))
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/M0kY/react-form-stepper/compare/v1.1.1...v1.1.2) (2019-10-30)
 
