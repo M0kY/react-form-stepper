@@ -41,8 +41,6 @@ const Stepper: React.FC<StepperProps> = ({
 }) => {
   const classes = useStepperStyles();
 
-  const childrenSteps = React.Children.toArray(children);
-
   const generateStepProps = (index: number, activeStep: number) => {
     return {
       className: stepClassName,
@@ -53,59 +51,38 @@ const Stepper: React.FC<StepperProps> = ({
     };
   };
 
-  let stepsToRender = null;
+  const useStepsProp = steps instanceof Array && steps.length > 0;
+  const stepsArray = useStepsProp ? steps : React.Children.toArray(children);
 
-  if (steps && steps.length > 0) {
-    stepsToRender = steps.map((step, index) => {
-      const stepProps = generateStepProps(index, activeStep);
-      return (
-        <div key={index} className={classes.StepContainer}>
-          {index !== 0 && (
-            <Connector
-              completed={stepProps.completed}
-              active={stepProps.active}
-              stateColors={connectorStateColors}
-              connectorStyle={{
-                ...connectorStyleDefaults,
-                ...connectorStyleConfig,
-                stepSize:
-                  (styleConfig && styleConfig.size) || stepStyleDefaults.size,
-              }}
-            />
-          )}
+  const stepsToRender = stepsArray!.map((step, index) => {
+    if (!useStepsProp && !React.isValidElement(step)) return null;
+    const stepProps = generateStepProps(index, activeStep);
+    return (
+      <div key={index} className={classes.StepContainer}>
+        {index !== 0 && (
+          <Connector
+            completed={stepProps.completed}
+            active={stepProps.active}
+            stateColors={connectorStateColors}
+            connectorStyle={{
+              ...connectorStyleDefaults,
+              ...connectorStyleConfig,
+              stepSize:
+                (styleConfig && styleConfig.size) || stepStyleDefaults.size,
+            }}
+          />
+        )}
+        {React.isValidElement(step) ? (
+          React.cloneElement(step, {
+            ...stepProps,
+            ...step.props,
+          })
+        ) : (
           <Step {...stepProps} {...step} />
-        </div>
-      );
-    });
-  } else {
-    stepsToRender = childrenSteps.map((childStep, index) => {
-      if (React.isValidElement(childStep)) {
-        const stepProps = generateStepProps(index, activeStep);
-        return (
-          <div key={index} className={classes.StepContainer}>
-            {index !== 0 && (
-              <Connector
-                completed={stepProps.completed}
-                active={stepProps.active}
-                stateColors={connectorStateColors}
-                connectorStyle={{
-                  ...connectorStyleDefaults,
-                  ...connectorStyleConfig,
-                  stepSize:
-                    (styleConfig && styleConfig.size) || stepStyleDefaults.size,
-                }}
-              />
-            )}
-            {React.cloneElement(childStep, {
-              ...stepProps,
-              ...childStep.props,
-            })}
-          </div>
-        );
-      }
-      return null;
-    });
-  }
+        )}
+      </div>
+    );
+  });
 
   return (
     <div className={clsx(classes.StepperContainer, className)}>
