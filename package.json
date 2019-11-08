@@ -54,7 +54,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.3.3",
     "@commitlint/config-conventional": "8.3.3",
-    "@types/jest": "24.0.21",
+    "@types/jest": "24.0.22",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
     "conventional-changelog-cli": "2.0.26",
