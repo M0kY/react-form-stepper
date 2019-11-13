@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/M0kY/react-form-stepper/compare/v1.1.3...v1.2.0) (2019-11-13)
+
+
+### Features
+
+* add prop for hiding all or just inactive connectors ([91098ae](https://github.com/M0kY/react-form-stepper/commit/91098ae))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/M0kY/react-form-stepper/compare/v1.1.2...v1.1.3) (2019-11-01)
 
