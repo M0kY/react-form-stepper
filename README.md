@@ -58,13 +58,27 @@ There are 2 possible ways of defining the steps in the Stepper component:
 
 ### Stepper props
 
-| Props                | Options      | Default | Description                                                            |
-| -------------------- | ------------ | ------- | ---------------------------------------------------------------------- |
-| steps                | \[StepsDTO\] | none    | Array of objecst defining the steps                                    |
-| activeStep           | number       | 0       | Value defining the active step                                         |
-| connectorStateColors | boolean      | false   | Use different colors for connector lines based on adjacent steps state |
-| className            | string       | none    | Add css classes to the Stepper component                               |
-| styleConfig          | StepStyleDTO | ---     | Object containing Step style defaults                                  |
+| Props                | Options              | Default | Description                                                            |
+| -------------------- | -------------------- | ------- | ---------------------------------------------------------------------- |
+| steps                | \[StepsDTO\]         | none    | Array of objecst defining the steps                                    |
+| activeStep           | number               | 0       | Value defining the active step                                         |
+| connectorStateColors | boolean              | false   | Use different colors for connector lines based on adjacent steps state |
+| className            | string               | none    | Add css classes to the Stepper component                               |
+| stepClassName        | string               | none    | Add css classes to Step components                                     |
+| hideConnectors       | boolean \|'inactive' | false   | Value defining connectors visibility                                   |
+| styleConfig          | StepStyleDTO         | ---     | Object containing Step style defaults                                  |
+| connectorStyleConfig | ConnectorStyleProps  | ---     | Object containing Connector style defaults                             |
+
+### ConnectorStyleProps
+
+| Props          | Options         | Default   | Description                                                                                                     |
+| -------------- | --------------- | --------- | --------------------------------------------------------------------------------------------------------------- |
+| disabledColor  | string          | '#bdbdbd' | Define the disabled connector line color                                                                        |
+| activeColor    | string          | '#ed1d24' | Define the active connector line color                                                                          |
+| completedColor | string          | '#a10308' | Define the completed connector line color                                                                       |
+| size           | React.ReactText | 1         | Define the thickness of the connector line                                                                      |
+| stepSize       | React.ReactText | '2em'     | Value defaulting to the step size, used to calculate the padded space between the step and connector line start |
+| style          | string          | 'solid'   | Define the style of the connector line                                                                          |
 
 ### StepsDTO
 
