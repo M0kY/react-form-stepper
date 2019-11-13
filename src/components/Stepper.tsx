@@ -19,6 +19,7 @@ interface StepperProps {
   stepClassName?: string;
   styleConfig?: StepStyleDTO;
   connectorStyleConfig?: ConnectorStyleProps;
+  hideConnectors?: boolean | 'inactive';
 }
 
 const generateId: GenerateId = rule => `RFS-${rule.key}`;
@@ -38,6 +39,7 @@ const Stepper: React.FC<StepperProps> = ({
   activeStep = 0,
   styleConfig,
   connectorStyleConfig,
+  hideConnectors = false,
 }) => {
   const classes = useStepperStyles();
 
@@ -59,19 +61,24 @@ const Stepper: React.FC<StepperProps> = ({
     const stepProps = generateStepProps(index, activeStep);
     return (
       <div key={index} className={classes.StepContainer}>
-        {index !== 0 && (
-          <Connector
-            completed={stepProps.completed}
-            active={stepProps.active}
-            stateColors={connectorStateColors}
-            connectorStyle={{
-              ...connectorStyleDefaults,
-              ...connectorStyleConfig,
-              stepSize:
-                (styleConfig && styleConfig.size) || stepStyleDefaults.size,
-            }}
-          />
-        )}
+        {index !== 0 &&
+          // If hideConnectors === 'inactive' render only active or completed connectors
+          // If hideConnectors is something other than 'inactive' or true render all connectors
+          ((hideConnectors === 'inactive' &&
+            (stepProps.active || stepProps.completed)) ||
+            (hideConnectors !== true && hideConnectors !== 'inactive')) && (
+            <Connector
+              completed={stepProps.completed}
+              active={stepProps.active}
+              stateColors={connectorStateColors}
+              connectorStyle={{
+                ...connectorStyleDefaults,
+                ...connectorStyleConfig,
+                stepSize:
+                  (styleConfig && styleConfig.size) || stepStyleDefaults.size,
+              }}
+            />
+          )}
         {React.isValidElement(step) ? (
           React.cloneElement(step, {
             ...stepProps,
