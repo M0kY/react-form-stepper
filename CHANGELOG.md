@@ -1,3 +1,13 @@
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/M0kY/react-form-stepper/compare/v1.2.0...v1.2.1) (2019-11-14)
+
+
+### Bug Fixes
+
+* correct step numbering ([a674492](https://github.com/M0kY/react-form-stepper/commit/a674492))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/M0kY/react-form-stepper/compare/v1.1.3...v1.2.0) (2019-11-13)
 
