@@ -46,7 +46,7 @@ const Stepper: React.FC<StepperProps> = ({
   const generateStepProps = (index: number, activeStep: number) => {
     return {
       className: stepClassName,
-      children: index,
+      children: index + 1,
       completed: index < activeStep,
       active: index === activeStep,
       styleConfig,
