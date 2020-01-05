@@ -12,6 +12,10 @@ A simple react stepper component for multi-step forms inspired by the Stepper co
 
 ![react-form-stepper preview](https://raw.githubusercontent.com/M0kY/react-form-stepper/master/react-form-stepper-demo.png)
 
+## Examples
+
+For examples of react-form-stepper go to: https://m0ky.github.io/react-form-stepper/.
+
 ## Getting started
 
 Install the library by running:
