@@ -86,6 +86,6 @@
   },
   "dependencies": {
     "clsx": "^1.0.4",
-    "react-jss": "^10.0.3"
+    "react-jss": "^10.0.2"
   }
 }
