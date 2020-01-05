@@ -1,3 +1,13 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/M0kY/react-form-stepper/compare/v1.2.2...v1.2.3) (2020-01-05)
+
+
+### Bug Fixes
+
+* revert react-jss update due to breaking changes to typescript types ([6822897](https://github.com/M0kY/react-form-stepper/commit/6822897))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/M0kY/react-form-stepper/compare/v1.2.1...v1.2.2) (2019-11-17)
 
