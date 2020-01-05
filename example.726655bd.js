@@ -347,4 +347,4 @@ var e=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{"./react-form-stepper.cjs.production.min.js":"QSgF"}],"zo2T":[function(require,module,exports) {
 "use strict";var e=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t.default=e,t};Object.defineProperty(exports,"__esModule",{value:!0}),require("react-app-polyfill/ie11");var t=e(require("react")),r=e(require("react-dom")),l=require("../dist"),n=function(){return t.createElement("div",null,t.createElement(l.Stepper,{activeStep:2,connectorStateColors:!0},t.createElement(l.Step,{label:"Children Step 1"}),t.createElement(l.Step,{label:"Children Step 2"}),t.createElement(l.Step,{label:"Children Step 3"}),t.createElement(l.Step,{label:"Children Step 4"})))};r.render(t.createElement(n,null),document.getElementById("root"));
 },{"react-app-polyfill/ie11":"lczo","react":"n8MK","react-dom":"wLSN","../dist":"Bzn5"}]},{},["zo2T"], null)
-//# sourceMappingURL=/example.726655bd.js.map
+//# sourceMappingURL=example.726655bd.js.map
