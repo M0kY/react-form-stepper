@@ -82,7 +82,7 @@
     "safe-publish-latest": "1.1.4",
     "tsdx": "0.12.3",
     "tslib": "1.10.0",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   },
   "dependencies": {
     "clsx": "^1.0.4",
