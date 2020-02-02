@@ -8,5 +8,6 @@
   "rebaseStalePrs": true,
   "updateNotScheduled": false,
   "prCreation": "not-pending",
-  "automerge": "minor"
+  "automerge": "minor",
+  "ignorePaths": []
 }
