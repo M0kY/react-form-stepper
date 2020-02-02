@@ -8,7 +8,7 @@
     "build": "parcel build index.html --public-url ./"
   },
   "dependencies": {
-    "react-app-polyfill": "^1.0.5"
+    "react-app-polyfill": "^1.0.6"
   },
   "alias": {
     "react": "../node_modules/react",
