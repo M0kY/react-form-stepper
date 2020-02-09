@@ -78,7 +78,7 @@
     "in-publish": "2.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "rimraf": "3.0.1",
+    "rimraf": "3.0.2",
     "safe-publish-latest": "1.1.4",
     "tsdx": "0.12.3",
     "tslib": "1.10.0",
