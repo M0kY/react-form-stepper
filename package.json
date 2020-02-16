@@ -77,7 +77,7 @@
     "typescript": "3.7.5"
   },
   "dependencies": {
-    "clsx": "^1.0.4",
-    "react-jss": "^10.0.2"
+    "clsx": "^1.1.0",
+    "react-jss": "^10.0.4"
   }
 }
