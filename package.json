@@ -34,7 +34,7 @@
     "test": "tsdx test",
     "lint": "tsdx lint",
     "gh-pages:clean": "rimraf example/dist",
-    "gh-pages:build": "npm run build --prefix example",
+    "gh-pages:build": "cd example && npm i && npm run build --prefix",
     "gh-pages:publish": "gh-pages -d example/dist",
     "gh-pages": "npm run gh-pages:clean && npm run gh-pages:build && npm run gh-pages:publish"
   },
