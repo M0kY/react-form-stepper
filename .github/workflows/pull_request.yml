@@ -1,0 +1,22 @@
+name: Pull Request
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      # check out repository code and setup node
+      - name: Checkout
+        uses: actions/checkout@v1
+      # install dependencies and run semantic-release
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install dependencies
+        run: npm i
+      - name: Build, lint & test
+        run: npm run build
