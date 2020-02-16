@@ -34,8 +34,7 @@
     "lint": "tsdx lint",
     "gh-pages:clean": "rimraf example/dist",
     "gh-pages:build": "npm run build && cd example && npm i && npm run build --prefix",
-    "gh-pages:publish": "gh-pages -d example/dist",
-    "gh-pages": "npm run gh-pages:clean && npm run gh-pages:build && npm run gh-pages:publish"
+    "gh-pages": "npm run gh-pages:clean && npm run gh-pages:build"
   },
   "peerDependencies": {
     "react": ">=16"
