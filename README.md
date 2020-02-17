@@ -1,6 +1,7 @@
 # react-form-stepper
 
 ![version](https://img.shields.io/npm/v/react-form-stepper?color=green)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/M0kY/react-form-stepper/Release/master)
 [![dependencies Status](https://david-dm.org/M0kY/react-form-stepper/status.svg)](https://david-dm.org/M0kY/react-form-stepper)
 [![devDependencies Status](https://david-dm.org/M0kY/react-form-stepper/dev-status.svg)](https://david-dm.org/M0kY/react-form-stepper?type=dev)
 ![License](https://img.shields.io/npm/l/react-form-stepper)
