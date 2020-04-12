@@ -65,7 +65,7 @@
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "1.7.0",
     "gh-pages": "2.2.0",
-    "husky": "4.2.3",
+    "husky": "4.2.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rimraf": "3.0.2",
