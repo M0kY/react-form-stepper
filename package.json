@@ -71,7 +71,7 @@
     "rimraf": "3.0.2",
     "semantic-release": "17.0.7",
     "tsdx": "0.13.2",
-    "tslib": "1.11.1",
+    "tslib": "1.11.2",
     "typescript": "3.8.3"
   },
   "dependencies": {
