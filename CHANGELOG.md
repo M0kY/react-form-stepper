@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/M0kY/react-form-stepper/compare/v1.2.3...v1.2.4) (2020-05-17)
+
+
+### Bug Fixes
+
+* property overwritten error thrown in new typescript version ([91cc6dc](https://github.com/M0kY/react-form-stepper/commit/91cc6dc40afc7588cbb67b667eaed33b9936209c))
+
 <a name="1.2.3"></a>
 ## [1.2.3](https://github.com/M0kY/react-form-stepper/compare/v1.2.2...v1.2.3) (2020-01-05)
 
@@ -96,6 +103,3 @@
 ### Bug Fixes
 
 * **tests:** fix Step types and tests ([736a179](https://github.com/M0kY/react-form-stepper/commit/736a179))
-
-
-
