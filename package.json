@@ -72,7 +72,7 @@
     "semantic-release": "17.0.7",
     "tsdx": "0.13.2",
     "tslib": "1.13.0",
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   },
   "dependencies": {
     "clsx": "^1.1.0",
