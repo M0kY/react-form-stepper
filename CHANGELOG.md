@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/M0kY/react-form-stepper/compare/v1.2.4...v1.2.5) (2020-05-17)
+
+
+### Bug Fixes
+
+* tsdx deprecation message ([4945c64](https://github.com/M0kY/react-form-stepper/commit/4945c64ab082b777be8374caa03eef5204fd18ed))
+
 ## [1.2.4](https://github.com/M0kY/react-form-stepper/compare/v1.2.3...v1.2.4) (2020-05-17)
 
 
