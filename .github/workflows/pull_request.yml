@@ -25,4 +25,4 @@ jobs:
           GITHUB_HEAD_REF: $GITHUB_HEAD_REF
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          run: npx semantic-release --dry-run --debug -b $GITHUB_HEAD_REF
+        run: npx semantic-release --dry-run --debug -b $GITHUB_HEAD_REF
