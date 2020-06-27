@@ -18,5 +18,11 @@ jobs:
           node-version: 12
       - name: Install dependencies
         run: npm i
-      - name: Build, lint & test
-        run: npm run build
+      - name: Lint & test
+        run: npm run lint && npm run test
+      - name: Release test
+        env:
+          GITHUB_HEAD_REF: $GITHUB_HEAD_REF
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --dry-run --debug -b $GITHUB_HEAD_REF
