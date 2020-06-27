@@ -1,3 +1,11 @@
+## [1.2.6](https://github.com/M0kY/react-form-stepper/compare/v1.2.5...v1.2.6) (2020-06-27)
+
+
+### Bug Fixes
+
+* indentation in workflow script ([2ab0c30](https://github.com/M0kY/react-form-stepper/commit/2ab0c30e91ab1bb1c7ffcae42ad08f8fbfa47908))
+* release config and github action ([8e78834](https://github.com/M0kY/react-form-stepper/commit/8e7883478885a661455cb29d487fedcdd0f5a6ee))
+
 ## [1.2.5](https://github.com/M0kY/react-form-stepper/compare/v1.2.4...v1.2.5) (2020-05-17)
 
 
