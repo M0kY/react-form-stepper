@@ -2,17 +2,6 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     [
-      "@semantic-release/github",
-      {
-        "assets": [
-          {
-            "path": "dist/index.js",
-            "label": "react-form-stepper distribution"
-          }
-        ]
-      }
-    ],
-    [
       "@semantic-release/release-notes-generator",
       {
         "preset": "angular",
@@ -37,6 +26,7 @@
         "changelogFile": "CHANGELOG.md"
       }
     ],
+    "@semantic-release/npm",
     [
       "@semantic-release/git",
       {
@@ -44,6 +34,18 @@
           "CHANGELOG.md"
         ]
       }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "dist/index.js",
+            "label": "react-form-stepper distribution"
+          }
+        ]
+      }
     ]
-  ]
+  ],
+  "preset": "angular"
 }
