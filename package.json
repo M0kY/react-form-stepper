@@ -1,7 +1,7 @@
 {
   "name": "react-form-stepper",
   "description": "React stepper component for multiple step forms",
-  "version": "1.2.3",
+  "version": "1.2.7",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/M0kY/react-form-stepper.git"
