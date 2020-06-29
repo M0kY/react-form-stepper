@@ -21,9 +21,10 @@ const Step: React.FC<StepProps> = ({
   const stepStyleProps: StepStyleProps = { ...styleConfig!, completed, active };
   const classes = useStepStyles({
     ...stepStyleDefaults,
-    ...(!stepStyleProps.size && {
-      circleFontSize: `calc(${stepStyleProps.size} / 2)`,
-    }),
+    ...(stepStyleProps.size &&
+      !stepStyleProps.circleFontSize && {
+        circleFontSize: `calc(${stepStyleProps.size} / 2)`,
+      }),
     ...stepStyleProps,
   });
 
