@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/M0kY/react-form-stepper/compare/v1.2.8...v1.2.9) (2020-06-29)
+
+
+### Bug Fixes
+
+* release content ([743698b](https://github.com/M0kY/react-form-stepper/commit/743698ba8838041dce0df07716ac908bcd560058))
+
 ## [1.2.8](https://github.com/M0kY/react-form-stepper/compare/v1.2.7...v1.2.8) (2020-06-29)
 
 
