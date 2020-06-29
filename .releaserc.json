@@ -26,23 +26,14 @@
         "changelogFile": "CHANGELOG.md"
       }
     ],
+    "@semantic-release/github",
     "@semantic-release/npm",
     [
       "@semantic-release/git",
       {
         "assets": [
+          "package.json",
           "CHANGELOG.md"
-        ]
-      }
-    ],
-    [
-      "@semantic-release/github",
-      {
-        "assets": [
-          {
-            "path": "dist/index.js",
-            "label": "react-form-stepper distribution"
-          }
         ]
       }
     ]
