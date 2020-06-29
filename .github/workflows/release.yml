@@ -21,6 +21,8 @@ jobs:
         run: npm i
       - name: Lint & test
         run: npm run lint && npm run test
+      - name: Build
+        run: npm run build
       - name: Release
         run: npx semantic-release
         env:
