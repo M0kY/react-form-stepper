@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/M0kY/react-form-stepper/compare/v1.2.7...v1.2.8) (2020-06-29)
+
+
+### Bug Fixes
+
+* specify tarball directory ([43130ec](https://github.com/M0kY/react-form-stepper/commit/43130ec9ed2ca2f4fda81e81bda6b6e6d98a2ad7))
+
 ## [1.2.7](https://github.com/M0kY/react-form-stepper/compare/v1.2.6...v1.2.7) (2020-06-29)
 
 
