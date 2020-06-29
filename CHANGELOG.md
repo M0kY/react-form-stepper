@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/M0kY/react-form-stepper/compare/v1.2.9...v1.2.10) (2020-06-29)
+
+
+### Bug Fixes
+
+* font size calculation condition ([c28a3c0](https://github.com/M0kY/react-form-stepper/commit/c28a3c068d3772db6c5dc43a7ed4fb30e96404a3))
+
 ## [1.2.9](https://github.com/M0kY/react-form-stepper/compare/v1.2.8...v1.2.9) (2020-06-29)
 
 
