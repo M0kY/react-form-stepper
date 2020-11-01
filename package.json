@@ -57,7 +57,7 @@
     "@types/react": "16.9.55",
     "@types/react-dom": "16.9.9",
     "eslint": "7.12.1",
-    "eslint-config-prettier": "6.14.0",
+    "eslint-config-prettier": "6.15.0",
     "eslint-config-react-app": "5.2.1",
     "eslint-plugin-flowtype": "4.7.0",
     "eslint-plugin-import": "2.22.1",
