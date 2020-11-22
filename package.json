@@ -55,7 +55,7 @@
     "@semantic-release/release-notes-generator": "9.0.1",
     "@types/jest": "26.0.15",
     "@types/react": "16.14.1",
-    "@types/react-dom": "16.9.9",
+    "@types/react-dom": "16.9.10",
     "eslint": "7.13.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-config-react-app": "5.2.1",
