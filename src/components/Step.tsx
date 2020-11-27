@@ -7,6 +7,7 @@ interface StepProps extends StepDTO {
   connectorStateColors?: boolean;
   styleConfig?: StepStyleDTO;
   className?: string;
+  onClick?: () => void;
 }
 
 const Step: React.FC<StepProps> = ({
