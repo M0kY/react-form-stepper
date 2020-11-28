@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/M0kY/react-form-stepper/compare/v1.2.10...v1.2.11) (2020-11-28)
+
+
+### Bug Fixes
+
+* **types:** step props interface extends button element interface ([ff05f67](https://github.com/M0kY/react-form-stepper/commit/ff05f6723575664f4a7a2fa8ac0e0289fa05ec59))
+
 ## [1.2.10](https://github.com/M0kY/react-form-stepper/compare/v1.2.9...v1.2.10) (2020-06-29)
 
 
