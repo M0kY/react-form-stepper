@@ -3,7 +3,9 @@ import clsx from 'clsx';
 import { StepDTO, StepStyleDTO, StepStyleProps } from '../types';
 import { useStepStyles, stepStyleDefaults } from '../styles';
 
-interface StepProps extends StepDTO {
+interface StepProps
+  extends StepDTO,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
   connectorStateColors?: boolean;
   styleConfig?: StepStyleDTO;
   className?: string;
