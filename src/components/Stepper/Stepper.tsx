@@ -27,6 +27,7 @@ const Stepper: React.FC<StepperProps> = ({
   connectorStyleConfig,
   hideConnectors = false,
   nonLinear = false,
+  ...rest
 }) => {
   const classes = useStepperStyles();
 
@@ -75,7 +76,7 @@ const Stepper: React.FC<StepperProps> = ({
 
   return (
     <StepperContext.Provider value={contextValue}>
-      <div className={clsx(classes.StepperContainer, className)}>
+      <div className={clsx(classes.StepperContainer, className)} {...rest}>
         {stepsToRender}
       </div>
     </StepperContext.Provider>
