@@ -2,14 +2,10 @@ import React from 'react';
 import { jss } from 'react-jss';
 import clsx from 'clsx';
 import { GenerateId, CreateGenerateId } from 'jss';
-import Step from './Step';
-import Connector from './Connector';
-import { StepDTO, StepStyleDTO, ConnectorStyleProps } from '../types';
-import {
-  useStepperStyles,
-  stepStyleDefaults,
-  connectorStyleDefaults,
-} from '../styles';
+import Step from '../Step';
+import { StepDTO, StepStyleDTO, ConnectorStyleProps } from '../../types';
+import { useStepperStyles } from '../../styles';
+import StepperContext from './StepperContext';
 
 interface StepperProps {
   steps?: StepDTO[];
@@ -20,6 +16,7 @@ interface StepperProps {
   styleConfig?: StepStyleDTO;
   connectorStyleConfig?: ConnectorStyleProps;
   hideConnectors?: boolean | 'inactive';
+  nonLinear?: boolean;
 }
 
 const generateId: GenerateId = rule => `RFS-${rule.key}`;
@@ -40,45 +37,41 @@ const Stepper: React.FC<StepperProps> = ({
   styleConfig,
   connectorStyleConfig,
   hideConnectors = false,
+  nonLinear = false,
 }) => {
   const classes = useStepperStyles();
 
-  const generateStepProps = (index: number, activeStep: number) => {
-    return {
-      className: stepClassName,
-      children: index + 1,
-      completed: index < activeStep,
-      active: index === activeStep,
-      styleConfig,
-    };
-  };
+  const contextValue = React.useMemo(
+    () => ({
+      activeStep,
+      hideConnectors,
+      nonLinear,
+      connectorStateColors: connectorStateColors && !nonLinear,
+      connectorStyleConfig,
+    }),
+    [
+      activeStep,
+      hideConnectors,
+      nonLinear,
+      connectorStateColors,
+      connectorStyleConfig,
+    ]
+  );
 
   const useStepsProp = steps instanceof Array && steps.length > 0;
   const stepsArray = useStepsProp ? steps : React.Children.toArray(children);
 
   const stepsToRender = stepsArray!.map((step, index) => {
     if (!useStepsProp && !React.isValidElement(step)) return null;
-    const stepProps = generateStepProps(index, activeStep);
+
+    const stepProps = {
+      className: stepClassName,
+      styleConfig,
+      index,
+    };
+
     return (
       <div key={index} className={classes.StepContainer}>
-        {index !== 0 &&
-          // If hideConnectors === 'inactive' render only active or completed connectors
-          // If hideConnectors is something other than 'inactive' or true render all connectors
-          ((hideConnectors === 'inactive' &&
-            (stepProps.active || stepProps.completed)) ||
-            (hideConnectors !== true && hideConnectors !== 'inactive')) && (
-            <Connector
-              completed={stepProps.completed}
-              active={stepProps.active}
-              stateColors={connectorStateColors}
-              connectorStyle={{
-                ...connectorStyleDefaults,
-                ...connectorStyleConfig,
-                stepSize:
-                  (styleConfig && styleConfig.size) || stepStyleDefaults.size,
-              }}
-            />
-          )}
         {React.isValidElement(step) ? (
           React.cloneElement(step, {
             ...stepProps,
@@ -92,9 +85,11 @@ const Stepper: React.FC<StepperProps> = ({
   });
 
   return (
-    <div className={clsx(classes.StepperContainer, className)}>
-      {stepsToRender}
-    </div>
+    <StepperContext.Provider value={contextValue}>
+      <div className={clsx(classes.StepperContainer, className)}>
+        {stepsToRender}
+      </div>
+    </StepperContext.Provider>
   );
 };
 

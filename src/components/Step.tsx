@@ -1,26 +1,60 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import { StepDTO, StepStyleDTO, StepStyleProps } from '../types';
-import { useStepStyles, stepStyleDefaults } from '../styles';
+import {
+  useStepStyles,
+  stepStyleDefaults,
+  connectorStyleDefaults,
+} from '../styles';
+import StepperContext from './Stepper/StepperContext';
+import Connector from './Connector';
 
 interface StepProps
   extends StepDTO,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
-  connectorStateColors?: boolean;
   styleConfig?: StepStyleDTO;
   className?: string;
+  index?: number;
 }
 
 const Step: React.FC<StepProps> = ({
   children,
   label = '',
   styleConfig,
-  completed = false,
-  active = false,
+  completed: completedProp,
+  active: activeProp,
+  disabled: disabledProp,
   className,
+  index = 0,
   ...rest
 }) => {
-  const stepStyleProps: StepStyleProps = { ...styleConfig!, completed, active };
+  const {
+    activeStep,
+    hideConnectors,
+    nonLinear,
+    connectorStateColors,
+    connectorStyleConfig,
+  } = React.useContext(StepperContext);
+
+  let [active = false, completed = false, disabled = false] = [
+    activeProp,
+    completedProp,
+    disabledProp,
+  ];
+
+  if (activeStep === index) {
+    active = activeProp !== undefined ? activeProp : true;
+  } else if (!nonLinear && activeStep > index) {
+    completed = completedProp !== undefined ? completedProp : true;
+  } else if (!nonLinear && activeStep < index) {
+    disabled = disabledProp !== undefined ? disabledProp : true;
+  }
+
+  const stepStyleProps: StepStyleProps = {
+    ...styleConfig!,
+    completed,
+    active: active || !disabled,
+  };
   const classes = useStepStyles({
     ...stepStyleDefaults,
     ...(stepStyleProps.size &&
@@ -31,30 +65,53 @@ const Step: React.FC<StepProps> = ({
   });
 
   return (
-    <div className={classes.StepMain}>
-      <button
-        disabled={!active && !completed}
-        className={clsx(
-          classes.StepCircle,
-          classes.StepButton,
-          { active },
-          { completed },
-          className
+    <React.Fragment>
+      {index !== 0 &&
+        // If hideConnectors === 'inactive' render only active or completed connectors
+        // If hideConnectors is something other than 'inactive' or true render all connectors
+        ((hideConnectors === 'inactive' && (active || completed)) ||
+          (hideConnectors !== true && hideConnectors !== 'inactive')) && (
+          <Connector
+            completed={completed}
+            active={active}
+            stateColors={connectorStateColors}
+            connectorStyle={{
+              ...connectorStyleDefaults,
+              ...connectorStyleConfig,
+              stepSize:
+                (styleConfig && styleConfig.size) || stepStyleDefaults.size,
+            }}
+          />
         )}
-        {...rest}
-      >
-        <span
-          className={clsx(classes.StepCircleContent, { active }, { completed })}
+      <div className={classes.StepMain}>
+        <button
+          disabled={disabled}
+          className={clsx(
+            classes.StepCircle,
+            classes.StepButton,
+            { active: !disabled },
+            { completed },
+            className
+          )}
+          {...rest}
         >
-          {children}
-        </span>
-      </button>
-      {label && (
-        <div className={classes.LabelContainer}>
-          <span className={classes.Label}>{label}</span>
-        </div>
-      )}
-    </div>
+          <span
+            className={clsx(
+              classes.StepCircleContent,
+              { active: !disabled },
+              { completed }
+            )}
+          >
+            {children || index + 1}
+          </span>
+        </button>
+        {label && (
+          <div className={classes.LabelContainer}>
+            <span className={classes.Label}>{label}</span>
+          </div>
+        )}
+      </div>
+    </React.Fragment>
   );
 };
 
