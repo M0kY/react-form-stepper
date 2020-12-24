@@ -71,6 +71,7 @@ There are 2 possible ways of defining the steps in the Stepper component:
 | className            | string               | none    | Add css classes to the Stepper component                               |
 | stepClassName        | string               | none    | Add css classes to Step components                                     |
 | hideConnectors       | boolean \|'inactive' | false   | Value defining connectors visibility                                   |
+| nonLinear            | boolean              | false   | Allow users to enter the flow at any point                             |
 | styleConfig          | StepStyleDTO         | ---     | Object containing Step style defaults                                  |
 | connectorStyleConfig | ConnectorStyleProps  | ---     | Object containing Connector style defaults                             |
 

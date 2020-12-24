@@ -26,12 +26,10 @@ export interface StepStyleDTO {
 
 export interface StepStyleProps extends StepStyleDTO, StepState {}
 
-export interface ConnectorStyleProps {
-  [key: string]: any;
-  disabledColor: string;
-  activeColor: string;
-  completedColor: string;
-  size: React.ReactText;
-  stepSize: React.ReactText;
-  style: string;
+export interface StepProps
+  extends StepDTO,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
+  styleConfig?: StepStyleDTO;
+  className?: string;
+  index?: number;
 }
