@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/M0kY/react-form-stepper/compare/v1.2.11...v1.3.0) (2020-12-24)
+
+
+### Features
+
+* add option to allow users to enter the flow at any point ([cda7907](https://github.com/M0kY/react-form-stepper/commit/cda7907ac23b042920ab703bad84265978374db6))
+* add option to use any div element prop on Stepper component ([697f347](https://github.com/M0kY/react-form-stepper/commit/697f347477b2be19ee32e6d06aa9ba55684fa2f8))
+
 ## [1.2.11](https://github.com/M0kY/react-form-stepper/compare/v1.2.10...v1.2.11) (2020-11-28)
 
 
