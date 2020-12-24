@@ -77,6 +77,7 @@
   },
   "dependencies": {
     "clsx": "^1.1.1",
-    "react-jss": "^10.3.0"
+    "react-jss": "^10.3.0",
+    "src": "^1.1.2"
   }
 }

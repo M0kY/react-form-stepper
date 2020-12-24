@@ -2,22 +2,11 @@ import React from 'react';
 import { jss } from 'react-jss';
 import clsx from 'clsx';
 import { GenerateId, CreateGenerateId } from 'jss';
-import Step from '../Step';
-import { StepDTO, StepStyleDTO, ConnectorStyleProps } from '../../types';
-import { useStepperStyles } from '../../styles';
-import StepperContext from './StepperContext';
 
-interface StepperProps {
-  steps?: StepDTO[];
-  activeStep: number;
-  connectorStateColors?: boolean;
-  className?: string;
-  stepClassName?: string;
-  styleConfig?: StepStyleDTO;
-  connectorStyleConfig?: ConnectorStyleProps;
-  hideConnectors?: boolean | 'inactive';
-  nonLinear?: boolean;
-}
+import Step from '../Step/Step';
+import { StepperProps } from './StepperTypes';
+import { useStepperStyles } from './StepperStyles';
+import StepperContext from './StepperContext';
 
 const generateId: GenerateId = rule => `RFS-${rule.key}`;
 

@@ -1,21 +1,10 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { StepDTO, StepStyleDTO, StepStyleProps } from '../types';
-import {
-  useStepStyles,
-  stepStyleDefaults,
-  connectorStyleDefaults,
-} from '../styles';
-import StepperContext from './Stepper/StepperContext';
-import Connector from './Connector';
 
-interface StepProps
-  extends StepDTO,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
-  styleConfig?: StepStyleDTO;
-  className?: string;
-  index?: number;
-}
+import { useStepStyles, stepStyleDefaults } from './StepStyles';
+import StepperContext from '../Stepper/StepperContext';
+import Connector from '../Connector/Connector';
+import { StepProps, StepStyleProps } from './StepTypes';
 
 const Step: React.FC<StepProps> = ({
   children,
@@ -76,7 +65,6 @@ const Step: React.FC<StepProps> = ({
             active={active}
             stateColors={connectorStateColors}
             connectorStyle={{
-              ...connectorStyleDefaults,
               ...connectorStyleConfig,
               stepSize:
                 (styleConfig && styleConfig.size) || stepStyleDefaults.size,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConnectorStyleProps } from 'src/types';
+import { ConnectorStyleProps } from '../Connector/ConnectorTypes';
 
 interface IStepperContext {
   activeStep: number;
