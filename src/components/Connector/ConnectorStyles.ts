@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { ConnectorStyleProps } from './ConnectorTypes';
 
-export const connectorStyleDefaults = {
+export const connectorStyleDefaults: ConnectorStyleProps = {
   disabledColor: '#bdbdbd',
   activeColor: '#ed1d24',
   completedColor: '#a10308',
