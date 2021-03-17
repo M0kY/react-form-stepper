@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { connectorStyleDefaults, useConnectorStyles } from './ConnectorStyles';
-import { ConnectorProps } from './ConnectorTypes';
+import { ConnectorProps, ConnectorStyleProps } from './ConnectorTypes';
 import { convertNumericToPixel } from '../../utils';
 
 const Connector: React.FC<ConnectorProps> = ({
@@ -11,7 +11,7 @@ const Connector: React.FC<ConnectorProps> = ({
   stateColors = false,
   connectorStyle,
 }) => {
-  const newConnectorStyle = {
+  const newConnectorStyle: ConnectorStyleProps = {
     ...connectorStyleDefaults,
     ...connectorStyle,
   };

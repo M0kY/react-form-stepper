@@ -4,7 +4,7 @@ export interface ConnectorStyleProps {
   activeColor: string;
   completedColor: string;
   size: React.ReactText;
-  stepSize: React.ReactText;
+  stepSize?: React.ReactText;
   style: string;
 }
 
