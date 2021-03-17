@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/M0kY/react-form-stepper/compare/v1.3.0...v1.4.0) (2021-03-17)
+
+
+### Bug Fixes
+
+* connector style props interface ([d44b581](https://github.com/M0kY/react-form-stepper/commit/d44b58130d5638e0d386996a48066baf4895bd1b))
+* revert default style colors ([7d5a547](https://github.com/M0kY/react-form-stepper/commit/7d5a5473dd0df0dc7e94c9f584d2a3619febc48e))
+
+
+### Features
+
+* add hover and active background color modifiers ([18ac984](https://github.com/M0kY/react-form-stepper/commit/18ac98435107bcb978a48f5e112ffaa46b1711c1))
+
 # [1.3.0](https://github.com/M0kY/react-form-stepper/compare/v1.2.11...v1.3.0) (2020-12-24)
 
 
