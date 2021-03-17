@@ -3,9 +3,9 @@ import { StepStyleProps } from './StepTypes';
 import Color from 'color';
 
 export const stepStyleDefaults = {
-  activeBgColor: 'red',
+  activeBgColor: '#ed1d24',
   activeTextColor: '#ffffff',
-  completedBgColor: 'blue',
+  completedBgColor: '#a10308',
   completedTextColor: '#ffffff',
   inactiveBgColor: '#e0e0e0',
   inactiveTextColor: '#ffffff',
