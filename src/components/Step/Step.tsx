@@ -77,7 +77,7 @@ const Step: React.FC<StepProps> = ({
           className={clsx(
             classes.StepCircle,
             classes.StepButton,
-            { active: !disabled },
+            { active: !disabled && !completed },
             { completed },
             className
           )}
@@ -86,7 +86,7 @@ const Step: React.FC<StepProps> = ({
           <span
             className={clsx(
               classes.StepCircleContent,
-              { active: !disabled },
+              { active: !disabled && !completed },
               { completed }
             )}
           >

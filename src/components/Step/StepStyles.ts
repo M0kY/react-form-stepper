@@ -1,10 +1,11 @@
 import { createUseStyles } from 'react-jss';
 import { StepStyleProps } from './StepTypes';
+import Color from 'color';
 
 export const stepStyleDefaults = {
-  activeBgColor: '#ed1d24',
+  activeBgColor: 'red',
   activeTextColor: '#ffffff',
-  completedBgColor: '#a10308',
+  completedBgColor: 'blue',
   completedTextColor: '#ffffff',
   inactiveBgColor: '#e0e0e0',
   inactiveTextColor: '#ffffff',
@@ -13,6 +14,16 @@ export const stepStyleDefaults = {
   labelFontSize: '0.875rem',
   borderRadius: '50%',
   fontWeight: 500,
+};
+
+const HOVER_COLOR_DEFAULT_RATIO = 0.15;
+const ACTIVE_COLOR_DEFAULT_RATIO = 0.2;
+
+const shadeOrTintColor = (colorString: string, ratio: number) => {
+  const color = Color(colorString);
+  return color.isDark()
+    ? color.darken(ratio).hex()
+    : color.lighten(ratio).hex();
 };
 
 export const useStepStyles = createUseStyles({
@@ -32,9 +43,33 @@ export const useStepStyles = createUseStyles({
     justifyContent: 'center',
     '&.active': {
       backgroundColor: props.activeBgColor,
+      '&:hover': {
+        backgroundColor: shadeOrTintColor(
+          props.activeBgColor,
+          HOVER_COLOR_DEFAULT_RATIO
+        ),
+      },
+      '&:active': {
+        backgroundColor: shadeOrTintColor(
+          props.activeBgColor,
+          ACTIVE_COLOR_DEFAULT_RATIO
+        ),
+      },
     },
     '&.completed': {
       backgroundColor: props.completedBgColor,
+      '&:hover': {
+        backgroundColor: shadeOrTintColor(
+          props.completedBgColor,
+          HOVER_COLOR_DEFAULT_RATIO
+        ),
+      },
+      '&:active': {
+        backgroundColor: shadeOrTintColor(
+          props.completedBgColor,
+          ACTIVE_COLOR_DEFAULT_RATIO
+        ),
+      },
     },
   }),
   StepButton: {
