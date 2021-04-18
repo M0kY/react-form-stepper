@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/M0kY/react-form-stepper/compare/v1.4.0...v1.4.1) (2021-04-18)
+
+
+### Bug Fixes
+
+* revert @semantic-release/npm upgrade due to breaking gh-pages:build script ([6970e75](https://github.com/M0kY/react-form-stepper/commit/6970e7545e71a3fef789762dde1d1954d14c87f1))
+
 # [1.4.0](https://github.com/M0kY/react-form-stepper/compare/v1.3.0...v1.4.0) (2021-03-17)
 
 
