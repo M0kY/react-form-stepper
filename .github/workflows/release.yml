@@ -29,9 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build GitHub pages
-        run: npm run gh-pages:clean
-        run: npm run build
-        run: cd example && npm i && npm run build --prefix
+        run: npm run gh-pages:clean && npm run build && cd example && npm i && npm run build --prefix
       - name: Deploy GitHub pages
         uses: peaceiris/actions-gh-pages@v3
         with:
