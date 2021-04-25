@@ -337,7 +337,7 @@ var e=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{}],"vw6u":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;var e=r(require("./arrayLikeToArray.js"));function r(e){return e&&e.__esModule?e:{default:e}}function t(r){if(Array.isArray(r))return(0,e.default)(r)}
 },{"./arrayLikeToArray.js":"rI22"}],"bG0g":[function(require,module,exports) {
-"use strict";function e(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
+"use strict";function e(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
 },{}],"AOxl":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;var e=r(require("./arrayLikeToArray.js"));function r(e){return e&&e.__esModule?e:{default:e}}function t(r,t){if(r){if("string"==typeof r)return(0,e.default)(r,t);var o=Object.prototype.toString.call(r).slice(8,-1);return"Object"===o&&r.constructor&&(o=r.constructor.name),"Map"===o||"Set"===o?Array.from(r):"Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o)?(0,e.default)(r,t):void 0}}
 },{"./arrayLikeToArray.js":"rI22"}],"gdEH":[function(require,module,exports) {
@@ -388,4 +388,4 @@ var e=require("./conversions"),n=require("./route"),r={},o=Object.keys(e);functi
 },{"./react-form-stepper.cjs.production.min.js":"QSgF"}],"zo2T":[function(require,module,exports) {
 "use strict";var e=this&&this.__createBinding||(Object.create?function(e,t,r,n){void 0===n&&(n=r),Object.defineProperty(e,n,{enumerable:!0,get:function(){return t[r]}})}:function(e,t,r,n){void 0===n&&(n=r),e[n]=t[r]}),t=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),r=this&&this.__importStar||function(r){if(r&&r.__esModule)return r;var n={};if(null!=r)for(var l in r)"default"!==l&&Object.prototype.hasOwnProperty.call(r,l)&&e(n,r,l);return t(n,r),n};Object.defineProperty(exports,"__esModule",{value:!0}),require("react-app-polyfill/ie11");var n=r(require("react")),l=r(require("react-dom")),i=require("../dist"),a=function(){return n.createElement("div",null,n.createElement(i.Stepper,{activeStep:2,connectorStateColors:!0},n.createElement(i.Step,{label:"Children Step 1"}),n.createElement(i.Step,{label:"Children Step 2"}),n.createElement(i.Step,{label:"Children Step 3"}),n.createElement(i.Step,{label:"Children Step 4"})))};l.render(n.createElement(a,null),document.getElementById("root"));
 },{"react-app-polyfill/ie11":"lczo","react":"n8MK","react-dom":"wLSN","../dist":"Bzn5"}]},{},["zo2T"], null)
-//# sourceMappingURL=example.a9d5588d.js.map
+//# sourceMappingURL=example.fd67e3e4.js.map
