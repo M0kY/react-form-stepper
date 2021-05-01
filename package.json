@@ -54,7 +54,7 @@
     "@semantic-release/npm": "^7.0.10",
     "@semantic-release/release-notes-generator": "9.0.2",
     "@types/color": "3.0.1",
-    "@types/jest": "26.0.22",
+    "@types/jest": "26.0.23",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
     "eslint": "7.25.0",
