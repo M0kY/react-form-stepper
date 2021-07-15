@@ -1,10 +1,10 @@
 # react-form-stepper
 
-![version](https://img.shields.io/npm/v/react-form-stepper?color=green)
+![version](https://img.shields.io/npm/v/react-form-stepper?color=brightgreen)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/M0kY/react-form-stepper/Release/master)
-[![dependencies Status](https://david-dm.org/M0kY/react-form-stepper/status.svg)](https://david-dm.org/M0kY/react-form-stepper)
-[![devDependencies Status](https://david-dm.org/M0kY/react-form-stepper/dev-status.svg)](https://david-dm.org/M0kY/react-form-stepper?type=dev)
-![License](https://img.shields.io/npm/l/react-form-stepper)
+![David](https://img.shields.io/david/M0kY/react-form-stepper)
+![David](https://img.shields.io/david/dev/M0kY/react-form-stepper)
+![License](https://img.shields.io/npm/l/react-form-stepper?color=brightgreen)
 ![Downloads](https://img.shields.io/npm/dm/react-form-stepper)
 
 [![NPM](https://nodei.co/npm/react-form-stepper.png?downloads=true&stars=true)](https://nodei.co/npm/react-form-stepper/)
