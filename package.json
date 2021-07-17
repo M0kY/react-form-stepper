@@ -29,7 +29,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build --format cjs,esm,umd",
     "test": "tsdx test",
     "lint": "tsdx lint",
     "gh-pages:clean": "rimraf example/dist",
