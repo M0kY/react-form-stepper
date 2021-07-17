@@ -30,6 +30,5 @@ export interface StepProps
   extends StepDTO,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
   styleConfig?: StepStyleDTO;
-  className?: string;
   index?: number;
 }

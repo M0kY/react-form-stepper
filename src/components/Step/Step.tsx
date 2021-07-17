@@ -5,6 +5,9 @@ import { useStepStyles, stepStyleDefaults } from './StepStyles';
 import StepperContext from '../Stepper/StepperContext';
 import Connector from '../Connector/Connector';
 import { StepProps, StepStyleProps } from './StepTypes';
+import StepContext from './StepContext';
+import StepButton from '../StepButton';
+import StepLabel from '../StepLabel';
 
 const Step: React.FC<StepProps> = ({
   children,
@@ -17,13 +20,9 @@ const Step: React.FC<StepProps> = ({
   index = 0,
   ...rest
 }) => {
-  const {
-    activeStep,
-    hideConnectors,
-    nonLinear,
-    connectorStateColors,
-    connectorStyleConfig,
-  } = React.useContext(StepperContext);
+  const { activeStep, hideConnectors, nonLinear } = React.useContext(
+    StepperContext
+  );
 
   let [active = false, completed = false, disabled = false] = [
     activeProp,
@@ -53,27 +52,25 @@ const Step: React.FC<StepProps> = ({
     ...stepStyleProps,
   });
 
+  const contextValue = {
+    completed,
+    active,
+    disabled,
+    index,
+    stepSize: (styleConfig && styleConfig.size) || stepStyleDefaults.size,
+  };
+
   return (
-    <React.Fragment>
+    <StepContext.Provider value={contextValue}>
       {index !== 0 &&
         // If hideConnectors === 'inactive' render only active or completed connectors
         // If hideConnectors is something other than 'inactive' or true render all connectors
         ((hideConnectors === 'inactive' && (active || completed)) ||
           (hideConnectors !== true && hideConnectors !== 'inactive')) && (
-          <Connector
-            completed={completed}
-            active={active}
-            stateColors={connectorStateColors}
-            connectorStyle={{
-              ...connectorStyleConfig,
-              stepSize:
-                (styleConfig && styleConfig.size) || stepStyleDefaults.size,
-            }}
-          />
+          <Connector />
         )}
       <div className={classes.StepMain}>
-        <button
-          disabled={disabled}
+        <StepButton
           className={clsx(
             classes.StepCircle,
             classes.StepButton,
@@ -81,25 +78,21 @@ const Step: React.FC<StepProps> = ({
             { completed },
             className
           )}
+          contentClasses={classes.StepCircleContent}
           {...rest}
         >
-          <span
-            className={clsx(
-              classes.StepCircleContent,
-              { active: !disabled && !completed },
-              { completed }
-            )}
-          >
-            {children || index + 1}
-          </span>
-        </button>
+          {children || index + 1}
+        </StepButton>
         {label && (
-          <div className={classes.LabelContainer}>
-            <span className={classes.Label}>{label}</span>
-          </div>
+          <StepLabel
+            fontSize={styleConfig?.labelFontSize}
+            fontWeight={styleConfig?.fontWeight}
+          >
+            {label}
+          </StepLabel>
         )}
       </div>
-    </React.Fragment>
+    </StepContext.Provider>
   );
 };
 

@@ -5,7 +5,6 @@ export interface StepperProps extends React.HTMLProps<HTMLDivElement> {
   steps?: StepDTO[];
   activeStep: number;
   connectorStateColors?: boolean;
-  className?: string;
   stepClassName?: string;
   styleConfig?: StepStyleDTO;
   connectorStyleConfig?: ConnectorStyleProps;

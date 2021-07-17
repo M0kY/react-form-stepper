@@ -11,9 +11,7 @@ export const stepStyleDefaults = {
   inactiveTextColor: '#ffffff',
   size: '2em',
   circleFontSize: '1rem',
-  labelFontSize: '0.875rem',
   borderRadius: '50%',
-  fontWeight: 500,
 };
 
 const HOVER_COLOR_DEFAULT_RATIO = 0.15;
@@ -88,17 +86,5 @@ export const useStepStyles = createUseStyles({
     '&.completed': {
       color: props.completedTextColor,
     },
-  }),
-  LabelContainer: (props: StepStyleProps) => ({
-    width: '100%',
-    fontSize: props.labelFontSize,
-    fontWeight: 400,
-    lineHeight: 1.4,
-  }),
-  Label: (props: StepStyleProps) => ({
-    display: 'block',
-    marginTop: 16,
-    textAlign: 'center',
-    fontWeight: props.fontWeight,
   }),
 });
