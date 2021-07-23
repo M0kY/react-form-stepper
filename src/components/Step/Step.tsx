@@ -72,13 +72,12 @@ const Step: React.FC<StepProps> = ({
       <div className={classes.StepMain}>
         <StepButton
           className={clsx(
-            classes.StepCircle,
             classes.StepButton,
             { active: !disabled && !completed },
             { completed },
             className
           )}
-          contentClasses={classes.StepCircleContent}
+          contentClasses={classes.StepButtonContent}
           {...rest}
         >
           {children || index + 1}

@@ -30,7 +30,11 @@ export const useStepStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  StepCircle: (props: StepStyleProps) => ({
+  StepButton: (props: StepStyleProps) => ({
+    border: 'none',
+    margin: 0,
+    padding: 0,
+    cursor: 'pointer',
     borderRadius: props.borderRadius,
     backgroundColor: props.inactiveBgColor,
     width: props.size,
@@ -70,13 +74,7 @@ export const useStepStyles = createUseStyles({
       },
     },
   }),
-  StepButton: {
-    border: 'none',
-    margin: 0,
-    padding: 0,
-    cursor: 'pointer',
-  },
-  StepCircleContent: (props: StepStyleProps) => ({
+  StepButtonContent: (props: StepStyleProps) => ({
     color: props.inactiveTextColor,
     fontSize: props.circleFontSize,
     fontVariantNumeric: 'tabular-nums',
