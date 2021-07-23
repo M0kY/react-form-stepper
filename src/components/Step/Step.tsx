@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { useStepStyles, stepStyleDefaults } from './StepStyles';
 import StepperContext from '../Stepper/StepperContext';
-import Connector from '../Connector/Connector';
+import Connector from '../Connector';
 import { StepProps, StepStyleProps } from './StepTypes';
 import StepContext from './StepContext';
 import StepButton from '../StepButton';
