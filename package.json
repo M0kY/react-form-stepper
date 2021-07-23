@@ -59,7 +59,6 @@
     "@types/jest": "26.0.24",
     "@types/react": "17.0.14",
     "@types/react-dom": "17.0.9",
-    "color": "4.0.0",
     "eslint": "7.30.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-react-app": "5.2.1",
@@ -81,7 +80,7 @@
   },
   "dependencies": {
     "clsx": "^1.1.1",
-    "color": "^4.0.0",
+    "color": "^3.2.1",
     "react-jss": "^10.6.0"
   }
 }
