@@ -30,7 +30,7 @@
     "clean": "rimraf dist",
     "start": "tsdx watch",
     "build": "tsdx build --format cjs,esm,umd",
-    "test": "tsdx test",
+    "test": "tsdx test --coverage",
     "lint": "tsdx lint",
     "gh-pages:clean": "rimraf example/dist",
     "gh-pages:build": "npm run build && cd example && npm i && npm run build --prefix",
@@ -81,6 +81,7 @@
   },
   "dependencies": {
     "clsx": "^1.1.1",
-    "react-jss": "^10.5.0"
+    "color": "^4.0.0",
+    "react-jss": "^10.6.0"
   }
 }

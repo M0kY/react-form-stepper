@@ -1,8 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import Stepper from '../Stepper';
-import Step from '.';
+import { Stepper, Step } from '../../';
 
 describe('<Step />', () => {
   it('merges styles and other props into the root node', () => {

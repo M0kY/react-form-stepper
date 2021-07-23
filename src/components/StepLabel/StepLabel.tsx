@@ -4,8 +4,8 @@ import { StepLabelProps } from './StepLabelTypes';
 
 const StepLabel: React.FC<StepLabelProps> = ({
   children,
-  fontSize = '0.875rem',
-  fontWeight = 500,
+  fontSize,
+  fontWeight,
 }) => {
   const classes = useStepLabelStyles({ fontSize, fontWeight });
 
