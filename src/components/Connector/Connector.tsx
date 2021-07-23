@@ -2,31 +2,34 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { connectorStyleDefaults, useConnectorStyles } from './ConnectorStyles';
-import { ConnectorProps, ConnectorStyleProps } from './ConnectorTypes';
+import { ConnectorStyleProps } from './ConnectorTypes';
 import { convertNumericToPixel } from '../../utils';
+import StepContext from '../Step/StepContext';
+import StepperContext from '../Stepper/StepperContext';
 
-const Connector: React.FC<ConnectorProps> = ({
-  completed = false,
-  active = false,
-  stateColors = false,
-  connectorStyle,
-}) => {
-  const newConnectorStyle: ConnectorStyleProps = {
+const Connector: React.FC = () => {
+  const { connectorStateColors, connectorStyleConfig } = React.useContext(
+    StepperContext
+  );
+  const { completed, active, stepSize } = React.useContext(StepContext);
+
+  const connectorStyle: ConnectorStyleProps = {
     ...connectorStyleDefaults,
-    ...connectorStyle,
+    ...connectorStyleConfig,
+    stepSize,
   };
 
-  convertNumericToPixel(newConnectorStyle, 'stepSize');
-  convertNumericToPixel(newConnectorStyle, 'size');
+  convertNumericToPixel(connectorStyle, 'stepSize');
+  convertNumericToPixel(connectorStyle, 'size');
 
-  const classes = useConnectorStyles(newConnectorStyle);
+  const classes = useConnectorStyles(connectorStyle);
   return (
     <div className={classes.ConnectorContainer}>
       <span
         className={clsx(
           classes.Connector,
-          { completed: completed && stateColors },
-          { active: active && stateColors }
+          { completed: completed && connectorStateColors },
+          { active: active && connectorStateColors }
         )}
       ></span>
     </div>

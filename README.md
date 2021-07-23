@@ -117,5 +117,6 @@ There are 2 possible ways of defining the steps in the Stepper component:
 | label     | string          | ''         | Value to be displayed under each step                       |
 | active    | boolean         | false      | Value to indicate should the step be displayed as active    |
 | completed | boolean         | false      | Value to indicate should the step be displayed as completed |
+| index     | number          | 0          | Index value of the step                                     |
 | className | string          | none       | Add css classes to the Step component                       |
 | children  | React.ReactNode | Step index | Value inside the step                                       |
