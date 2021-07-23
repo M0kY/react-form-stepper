@@ -1,3 +1,16 @@
+## [1.4.2](https://github.com/M0kY/react-form-stepper/compare/v1.4.1...v1.4.2) (2021-07-23)
+
+
+### Bug Fixes
+
+* active, completed, disabled condition checks to enable overriding ([3adfb24](https://github.com/M0kY/react-form-stepper/commit/3adfb24925de30269f3d7ad4dbb9233b62074043))
+* add umd build ([7ca7d53](https://github.com/M0kY/react-form-stepper/commit/7ca7d535532b8275a6c28fcd23441c3ffbd2e0a6))
+* consolidate multiple css classes into a single one ([f5770ef](https://github.com/M0kY/react-form-stepper/commit/f5770efadde0ba77e25bb6a2e38f9871d6d9ea9b))
+* import connector from index.ts ([eee59e1](https://github.com/M0kY/react-form-stepper/commit/eee59e113b61f69eaecd66163fcc53abfc22c317))
+* make activeStep prop optional, if not defined defaults to 0 ([2867fb8](https://github.com/M0kY/react-form-stepper/commit/2867fb8c594b7de655d1b67f9370c74b646886fb))
+* make StepButon prop contentClasses optional ([0dcdea1](https://github.com/M0kY/react-form-stepper/commit/0dcdea14d8291575bc4ec2a8413a1b62e9a27227))
+* StepLabel style types ([8e8a8f9](https://github.com/M0kY/react-form-stepper/commit/8e8a8f97d91e3af6b7647b46744f062cdbc349dc))
+
 ## [1.4.1](https://github.com/M0kY/react-form-stepper/compare/v1.4.0...v1.4.1) (2021-04-18)
 
 
