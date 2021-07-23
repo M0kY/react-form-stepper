@@ -32,15 +32,20 @@ const Step: React.FC<StepProps> = ({
 
   if (activeStep === index) {
     active = activeProp !== undefined ? activeProp : true;
-  } else if (!nonLinear && activeStep > index) {
+  } else if (!nonLinear && activeStep > index && !activeProp && !disabledProp) {
     completed = completedProp !== undefined ? completedProp : true;
-  } else if (!nonLinear && activeStep < index) {
+  } else if (
+    !nonLinear &&
+    activeStep < index &&
+    !activeProp &&
+    !completedProp
+  ) {
     disabled = disabledProp !== undefined ? disabledProp : true;
   }
 
   const stepStyleProps: StepStyleProps = {
     ...styleConfig!,
-    completed,
+    completed: completed && !disabled,
     active: active || !disabled,
   };
   const classes = useStepStyles({
