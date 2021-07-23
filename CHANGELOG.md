@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/M0kY/react-form-stepper/compare/v1.4.2...v1.4.3) (2021-07-23)
+
+
+### Bug Fixes
+
+* downgrade color due to error in gh-pages build ([2026669](https://github.com/M0kY/react-form-stepper/commit/20266692deb0dc410ea93d4f0ec022a21ab2c1f3))
+
 ## [1.4.2](https://github.com/M0kY/react-form-stepper/compare/v1.4.1...v1.4.2) (2021-07-23)
 
 
