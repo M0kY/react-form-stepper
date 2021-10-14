@@ -61,6 +61,29 @@ There are 2 possible ways of defining the steps in the Stepper component:
 </Stepper>
 ```
 
+### Using with SSR
+When developing an SSR application with a framework like `Next.js` you might face your console being polluted with the following message
+`Warning: [JSS] Rule is not linked. Missing sheet option "link: true".` caused by the underlying dependency `react-jss`.
+A workaround is to use the `dynamic` import module like in the example below.
+
+```js
+// CustomStepper.js
+const CustomStepper = () => {
+  return <Stepper steps={[{ label: 'Step 1' }, { label: 'Step 2' }]} activeStep={1} />;
+};
+
+export default CustomStepper;
+```
+
+```js
+// MultiStepForm.js
+import dynamic from 'next/dynamic';
+
+const StepperComponent = dynamic(() => import('./CustomStepper'), {
+  ssr: false,
+});
+```
+
 ### Stepper props
 
 | Props                | Options              | Default | Description                                                            |
