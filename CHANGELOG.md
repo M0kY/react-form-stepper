@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/M0kY/react-form-stepper/compare/v1.4.3...v2.0.0) (2022-03-20)
+
+
+### Bug Fixes
+
+* custom class name generator disable to close [#387](https://github.com/M0kY/react-form-stepper/issues/387) ([a86ae66](https://github.com/M0kY/react-form-stepper/commit/a86ae66e3fc8da1e31fece06e3ecf75e029787fa))
+
+
+### BREAKING CHANGES
+
+* generated class names change and added IDs on
+HTML elements equal to previous class name values
+
 ## [1.4.3](https://github.com/M0kY/react-form-stepper/compare/v1.4.2...v1.4.3) (2021-07-23)
 
 
