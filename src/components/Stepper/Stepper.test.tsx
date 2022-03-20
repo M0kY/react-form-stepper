@@ -14,8 +14,8 @@ describe('<Stepper />', () => {
         </Stepper>
       );
 
-      const steps = container.querySelectorAll('.RFS-StepMain');
-      const connectors = container.querySelectorAll('.RFS-Connector');
+      const steps = container.querySelectorAll('#RFS-StepMain');
+      const connectors = container.querySelectorAll('#RFS-Connector');
 
       expect(steps).toHaveLength(3);
       expect(connectors).toHaveLength(2);
@@ -32,8 +32,8 @@ describe('<Stepper />', () => {
         />
       );
 
-      const steps = container.querySelectorAll('.RFS-StepMain');
-      const connectors = container.querySelectorAll('.RFS-Connector');
+      const steps = container.querySelectorAll('#RFS-StepMain');
+      const connectors = container.querySelectorAll('#RFS-Connector');
 
       expect(steps).toHaveLength(3);
       expect(connectors).toHaveLength(2);
@@ -52,8 +52,8 @@ describe('<Stepper />', () => {
 
       const { container, rerender } = render(element);
 
-      const stepButtons = container.querySelectorAll('.RFS-StepButton');
-      const connectors = container.querySelectorAll('.RFS-Connector');
+      const stepButtons = container.querySelectorAll('#RFS-StepButton');
+      const connectors = container.querySelectorAll('#RFS-Connector');
 
       expect(stepButtons[0]).toHaveClass('active');
       expect(stepButtons[1]).not.toHaveClass('active', 'completed');
@@ -80,8 +80,8 @@ describe('<Stepper />', () => {
 
       const { container, rerender } = render(element);
 
-      const stepButtons = container.querySelectorAll('.RFS-StepButton');
-      const connectors = container.querySelectorAll('.RFS-Connector');
+      const stepButtons = container.querySelectorAll('#RFS-StepButton');
+      const connectors = container.querySelectorAll('#RFS-Connector');
 
       expect(stepButtons[0]).not.toHaveClass('completed');
       expect(stepButtons[1]).not.toHaveClass('completed', 'disabled');
@@ -117,7 +117,7 @@ describe('<Stepper />', () => {
         </Stepper>
       );
 
-      const connectors = container.querySelectorAll('.RFS-Connector');
+      const connectors = container.querySelectorAll('#RFS-Connector');
 
       expect(connectors).toHaveLength(0);
     });
@@ -130,7 +130,7 @@ describe('<Stepper />', () => {
         </Stepper>
       );
 
-      const connector = container.querySelector('.RFS-Connector');
+      const connector = container.querySelector('#RFS-Connector');
 
       expect(connector).toHaveClass('active');
     });
@@ -143,7 +143,7 @@ describe('<Stepper />', () => {
         </Stepper>
       );
 
-      const connector = container.querySelector('.RFS-Connector');
+      const connector = container.querySelector('#RFS-Connector');
 
       expect(connector).toHaveClass('completed');
     });

@@ -24,8 +24,9 @@ const Connector: React.FC = () => {
 
   const classes = useConnectorStyles(connectorStyle);
   return (
-    <div className={classes.ConnectorContainer}>
+    <div id="RFS-ConnectorContainer" className={classes.ConnectorContainer}>
       <span
+        id="RFS-Connector"
         className={clsx(
           classes.Connector,
           { completed: completed && connectorStateColors },

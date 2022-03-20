@@ -62,7 +62,7 @@ describe('<Step />', () => {
         </Stepper>
       );
 
-      const stepButton = container.querySelectorAll('.RFS-StepButton');
+      const stepButton = container.querySelectorAll('#RFS-StepButton');
 
       expect(stepButton[2]).toHaveClass('active');
     });
@@ -76,7 +76,7 @@ describe('<Step />', () => {
         </Stepper>
       );
 
-      const stepButton = container.querySelectorAll('.RFS-StepButton');
+      const stepButton = container.querySelectorAll('#RFS-StepButton');
 
       expect(stepButton[2]).toHaveClass('completed');
     });
@@ -90,7 +90,7 @@ describe('<Step />', () => {
         </Stepper>
       );
 
-      const stepButton = container.querySelectorAll('.RFS-StepButton');
+      const stepButton = container.querySelectorAll('#RFS-StepButton');
 
       expect(stepButton[1]).toHaveProperty('disabled');
     });

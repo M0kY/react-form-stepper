@@ -1,20 +1,20 @@
 import React from 'react';
-import { jss } from 'react-jss';
+// import { jss } from 'react-jss';
 import clsx from 'clsx';
-import { GenerateId, CreateGenerateId } from 'jss';
+// import { GenerateId, CreateGenerateId } from 'jss';
 
 import Step from '../Step/Step';
 import { StepperProps } from './StepperTypes';
 import { useStepperStyles } from './StepperStyles';
 import StepperContext from './StepperContext';
 
-const generateId: GenerateId = rule => `RFS-${rule.key}`;
+// const generateId: GenerateId = rule => `${rule.key}`;
 
-const createGenerateId: CreateGenerateId = () => {
-  return generateId;
-};
+// const createGenerateId: CreateGenerateId = () => {
+//   return generateId;
+// };
 
-jss.setup({ createGenerateId });
+// jss.setup({ createGenerateId });
 
 const Stepper: React.FC<StepperProps> = ({
   steps,
@@ -76,7 +76,11 @@ const Stepper: React.FC<StepperProps> = ({
 
   return (
     <StepperContext.Provider value={contextValue}>
-      <div className={clsx(classes.StepperContainer, className)} {...rest}>
+      <div
+        id="RFS-StepperContainer"
+        className={clsx(classes.StepperContainer, className)}
+        {...rest}
+      >
         {stepsToRender}
       </div>
     </StepperContext.Provider>

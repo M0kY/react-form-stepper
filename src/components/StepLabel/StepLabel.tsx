@@ -10,8 +10,10 @@ const StepLabel: React.FC<StepLabelProps> = ({
   const classes = useStepLabelStyles({ fontSize, fontWeight });
 
   return (
-    <div className={classes.LabelContainer}>
-      <span className={classes.Label}>{children}</span>
+    <div id="RFS-LabelContainer" className={classes.LabelContainer}>
+      <span id="RFS-Label" className={classes.Label}>
+        {children}
+      </span>
     </div>
   );
 };

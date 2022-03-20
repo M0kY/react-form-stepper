@@ -74,8 +74,9 @@ const Step: React.FC<StepProps> = ({
           (hideConnectors !== true && hideConnectors !== 'inactive')) && (
           <Connector />
         )}
-      <div className={classes.StepMain}>
+      <div id="RFS-StepMain" className={classes.StepMain}>
         <StepButton
+          id="RFS-StepButton"
           className={clsx(
             classes.StepButton,
             { active: !disabled && !completed },
