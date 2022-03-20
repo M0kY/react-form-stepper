@@ -61,7 +61,7 @@ const Stepper: React.FC<StepperProps> = ({
     };
 
     return (
-      <div key={index} className={classes.StepContainer}>
+      <div key={index} id="RFS-StepContainer" className={classes.StepContainer}>
         {React.isValidElement(step) ? (
           React.cloneElement(step, {
             ...stepProps,
