@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/M0kY/react-form-stepper/compare/v2.0.0...v2.0.1) (2022-03-20)
+
+
+### Bug Fixes
+
+* add missing id to step container HTML tag ([66da326](https://github.com/M0kY/react-form-stepper/commit/66da326feb739f24f6be2b1a7bc88848eeece514))
+
 # [2.0.0](https://github.com/M0kY/react-form-stepper/compare/v1.4.3...v2.0.0) (2022-03-20)
 
 
