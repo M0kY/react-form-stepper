@@ -20,9 +20,8 @@ const Step: React.FC<StepProps> = ({
   index = 0,
   ...rest
 }) => {
-  const { activeStep, hideConnectors, nonLinear } = React.useContext(
-    StepperContext
-  );
+  const { activeStep, hideConnectors, nonLinear } =
+    React.useContext(StepperContext);
 
   let [active = false, completed = false, disabled = false] = [
     activeProp,

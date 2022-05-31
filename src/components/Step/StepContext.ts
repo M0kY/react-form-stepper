@@ -5,7 +5,7 @@ interface IStepContext {
   active: boolean;
   disabled: boolean;
   index: number;
-  stepSize?: React.ReactText;
+  stepSize?: string | number;
 }
 
 const StepContext = React.createContext<IStepContext>({

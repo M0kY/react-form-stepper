@@ -8,15 +8,14 @@ import StepContext from '../Step/StepContext';
 import StepperContext from '../Stepper/StepperContext';
 
 const Connector: React.FC = () => {
-  const { connectorStateColors, connectorStyleConfig } = React.useContext(
-    StepperContext
-  );
+  const { connectorStateColors, connectorStyleConfig } =
+    React.useContext(StepperContext);
   const { completed, active, stepSize } = React.useContext(StepContext);
 
   const connectorStyle: ConnectorStyleProps = {
     ...connectorStyleDefaults,
     ...connectorStyleConfig,
-    stepSize,
+    stepSize: connectorStyleConfig?.stepSize || stepSize,
   };
 
   convertNumericToPixel(connectorStyle, 'stepSize');
