@@ -10,7 +10,7 @@ const App: React.FC = () => {
         //steps={[{ label: 'Step 1' }, { label: 'Step 2' }, { label: 'Step 3' }]}
         activeStep={2}
         connectorStateColors
-        connectorStyleConfig={{ stepSize: '50px', size: 1 }}
+        connectorStyleConfig={{ size: 2 }}
         styleConfig={{ size: 50 }}
       >
         <Step label="Children Step 1" />
