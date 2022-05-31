@@ -19,6 +19,6 @@
     "@types/react-dom": "../node_modules/@types/react-dom"
   },
   "devDependencies": {
-    "parcel": "^2.6.0"
+    "parcel": "1.12.3"
   }
 }
