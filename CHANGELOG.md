@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/M0kY/react-form-stepper/compare/v2.0.1...v2.0.2) (2022-05-31)
+
+
+### Bug Fixes
+
+* react-jss dynamic props in react 18 ([185ffa5](https://github.com/M0kY/react-form-stepper/commit/185ffa5faa514e9d453b3eda026ee9a202a1f46f))
+
 ## [2.0.1](https://github.com/M0kY/react-form-stepper/compare/v2.0.0...v2.0.1) (2022-03-20)
 
 
