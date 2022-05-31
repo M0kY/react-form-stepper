@@ -7,6 +7,7 @@ import Step from '../Step/Step';
 import { StepperProps } from './StepperTypes';
 import { useStepperStyles } from './StepperStyles';
 import StepperContext from './StepperContext';
+import { StepDTO } from '../Step/StepTypes';
 
 // const generateId: GenerateId = rule => `${rule.key}`;
 
@@ -49,9 +50,20 @@ const Stepper: React.FC<StepperProps> = ({
   );
 
   const useStepsProp = steps instanceof Array && steps.length > 0;
-  const stepsArray = useStepsProp ? steps : React.Children.toArray(children);
+  const stepsArray = (useStepsProp
+    ? steps
+    : React.Children.toArray(children)) as Array<
+    | StepDTO
+    | (
+        | string
+        | number
+        | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+        | React.ReactFragment
+        | React.ReactPortal
+      )
+  >;
 
-  const stepsToRender = stepsArray!.map((step, index) => {
+  const stepsToRender = stepsArray.map((step, index) => {
     if (!useStepsProp && !React.isValidElement(step)) return null;
 
     const stepProps = {
@@ -68,7 +80,7 @@ const Stepper: React.FC<StepperProps> = ({
             ...step.props,
           })
         ) : (
-          <Step {...stepProps} {...step} />
+          <Step {...stepProps} {...(typeof step === 'object' ? step : {})} />
         )}
       </div>
     );
