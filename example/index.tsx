@@ -1,6 +1,6 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 import { Stepper, Step } from '../dist';
 
 const App: React.FC = () => {
@@ -10,6 +10,8 @@ const App: React.FC = () => {
         //steps={[{ label: 'Step 1' }, { label: 'Step 2' }, { label: 'Step 3' }]}
         activeStep={2}
         connectorStateColors
+        connectorStyleConfig={{ stepSize: '50px', size: 1 }}
+        styleConfig={{ size: 50 }}
       >
         <Step label="Children Step 1" />
         <Step label="Children Step 2" />
@@ -20,4 +22,11 @@ const App: React.FC = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
