@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/M0kY/react-form-stepper/compare/v2.0.2...v2.0.3) (2022-05-31)
+
+
+### Bug Fixes
+
+* override for stepSize in connectorStyleConfig ([d6ab466](https://github.com/M0kY/react-form-stepper/commit/d6ab4668fe5f76062d3fa53c5c09f1334ec4d625))
+
 ## [2.0.2](https://github.com/M0kY/react-form-stepper/compare/v2.0.1...v2.0.2) (2022-05-31)
 
 
