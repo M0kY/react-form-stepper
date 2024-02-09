@@ -13,5 +13,6 @@ export const useStepLabelStyles = createUseStyles({
     marginTop: 16,
     textAlign: 'center',
     fontWeight: props.fontWeight || 500,
+    color: props.labelColor || '#4a4c55'
   }),
 });
