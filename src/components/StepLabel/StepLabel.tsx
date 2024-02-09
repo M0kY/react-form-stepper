@@ -6,8 +6,9 @@ const StepLabel: React.FC<StepLabelProps> = ({
   children,
   fontSize,
   fontWeight,
+  labelColor,
 }) => {
-  const classes = useStepLabelStyles({ fontSize, fontWeight });
+  const classes = useStepLabelStyles({ fontSize, fontWeight, labelColor });
 
   return (
     <div id="RFS-LabelContainer" className={classes.LabelContainer}>

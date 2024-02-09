@@ -22,6 +22,7 @@ export interface StepStyleDTO {
   labelFontSize: React.ReactText;
   borderRadius: React.ReactText;
   fontWeight: React.ReactText;
+  labelColor: React.ReactText;
 }
 
 export interface StepStyleProps extends StepStyleDTO, StepState {}
