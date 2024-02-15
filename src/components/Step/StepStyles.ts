@@ -3,7 +3,7 @@ import { StepStyleProps } from './StepTypes';
 import Color from 'color';
 
 export const stepStyleDefaults = {
-  activeBgColor: '#ed1d24',
+  activeBgColor: '#0000',
   activeTextColor: '#ffffff',
   completedBgColor: '#a10308',
   completedTextColor: '#ffffff',
