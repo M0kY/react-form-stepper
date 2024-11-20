@@ -18,9 +18,10 @@ const Step: React.FC<StepProps> = ({
   disabled: disabledProp,
   className,
   index = 0,
+  dir,
   ...rest
 }) => {
-  const { activeStep, hideConnectors, nonLinear } =
+  const { activeStep, hideConnectors, nonLinear, lastStepIndex } =
     React.useContext(StepperContext);
 
   let [active = false, completed = false, disabled = false] = [
@@ -51,8 +52,8 @@ const Step: React.FC<StepProps> = ({
     ...stepStyleDefaults,
     ...(stepStyleProps.size &&
       !stepStyleProps.circleFontSize && {
-        circleFontSize: `calc(${stepStyleProps.size} / 2)`,
-      }),
+      circleFontSize: `calc(${stepStyleProps.size} / 2)`,
+    }),
     ...stepStyleProps,
   });
 
@@ -64,16 +65,17 @@ const Step: React.FC<StepProps> = ({
     stepSize: (styleConfig && styleConfig.size) || stepStyleDefaults.size,
   };
 
+  const showConnector = () => {
+    // If hideConnectors === 'inactive' render only active or completed connectors
+    // If hideConnectors is something other than 'inactive' or true render all connectors
+    return ((hideConnectors === 'inactive' && (active || completed)) ||
+      (hideConnectors !== true && hideConnectors !== 'inactive'))
+  }
+
   return (
     <StepContext.Provider value={contextValue}>
-      {index !== 0 &&
-        // If hideConnectors === 'inactive' render only active or completed connectors
-        // If hideConnectors is something other than 'inactive' or true render all connectors
-        ((hideConnectors === 'inactive' && (active || completed)) ||
-          (hideConnectors !== true && hideConnectors !== 'inactive')) && (
-          <Connector />
-        )}
-      <div id="RFS-StepMain" className={classes.StepMain}>
+      {showConnector() && dir !== "rtl" && index !== 0 && <Connector />}
+      <div dir={dir} id="RFS-StepMain" className={classes.StepMain}>
         <StepButton
           id="RFS-StepButton"
           className={clsx(
@@ -96,6 +98,7 @@ const Step: React.FC<StepProps> = ({
           </StepLabel>
         )}
       </div>
+      {showConnector() && dir === "rtl" && index != lastStepIndex && <Connector />}
     </StepContext.Provider>
   );
 };

@@ -62,6 +62,7 @@ There are 2 possible ways of defining the steps in the Stepper component:
 ```
 
 ### Using with SSR
+
 When developing an SSR application with a framework like `Next.js` you might face your console being polluted with the following message
 `Warning: [JSS] Rule is not linked. Missing sheet option "link: true".` caused by the underlying dependency `react-jss`.
 A workaround is to use the `dynamic` import module like in the example below.
@@ -69,7 +70,12 @@ A workaround is to use the `dynamic` import module like in the example below.
 ```js
 // CustomStepper.js
 const CustomStepper = () => {
-  return <Stepper steps={[{ label: 'Step 1' }, { label: 'Step 2' }]} activeStep={1} />;
+  return (
+    <Stepper
+      steps={[{ label: 'Step 1' }, { label: 'Step 2' }]}
+      activeStep={1}
+    />
+  );
 };
 
 export default CustomStepper;
@@ -97,6 +103,7 @@ const StepperComponent = dynamic(() => import('./CustomStepper'), {
 | nonLinear            | boolean              | false   | Allow users to enter the flow at any point                             |
 | styleConfig          | StepStyleDTO         | ---     | Object containing Step style defaults                                  |
 | connectorStyleConfig | ConnectorStyleProps  | ---     | Object containing Connector style defaults                             |
+| dir                  | string               | ---     | Use to specify text direction of the element content                   |
 
 ### ConnectorStyleProps
 
