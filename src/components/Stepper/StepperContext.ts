@@ -7,6 +7,7 @@ interface IStepperContext {
   nonLinear: boolean;
   connectorStateColors: boolean;
   connectorStyleConfig?: ConnectorStyleProps;
+  lastStepIndex?: number,
 }
 
 const StepperContext = React.createContext<IStepperContext>({
