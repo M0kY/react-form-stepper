@@ -28,40 +28,24 @@ const Stepper: React.FC<StepperProps> = ({
   connectorStyleConfig,
   hideConnectors = false,
   nonLinear = false,
+  dir,
   ...rest
 }) => {
   const classes = useStepperStyles();
-
-  const contextValue = React.useMemo(
-    () => ({
-      activeStep,
-      hideConnectors,
-      nonLinear,
-      connectorStateColors: connectorStateColors && !nonLinear,
-      connectorStyleConfig,
-    }),
-    [
-      activeStep,
-      hideConnectors,
-      nonLinear,
-      connectorStateColors,
-      connectorStyleConfig,
-    ]
-  );
 
   const useStepsProp = steps instanceof Array && steps.length > 0;
   const stepsArray = (useStepsProp
     ? steps
     : React.Children.toArray(children)) as Array<
-    | StepDTO
-    | (
+      | StepDTO
+      | (
         | string
         | number
         | React.ReactElement<any, string | React.JSXElementConstructor<any>>
         | React.ReactFragment
         | React.ReactPortal
       )
-  >;
+    >;
 
   const stepsToRender = stepsArray.map((step, index) => {
     if (!useStepsProp && !React.isValidElement(step)) return null;
@@ -70,10 +54,11 @@ const Stepper: React.FC<StepperProps> = ({
       className: stepClassName,
       styleConfig,
       index,
+      dir,
     };
 
     return (
-      <div key={index} id="RFS-StepContainer" className={classes.StepContainer}>
+      <div dir={dir} key={index} id="RFS-StepContainer" className={classes.StepContainer}>
         {React.isValidElement(step) ? (
           React.cloneElement(step, {
             ...stepProps,
@@ -86,9 +71,29 @@ const Stepper: React.FC<StepperProps> = ({
     );
   });
 
+  console.log('stepsToRender', stepsToRender);
+
+  const contextValue = React.useMemo(
+    () => ({
+      activeStep,
+      hideConnectors,
+      nonLinear,
+      connectorStateColors: connectorStateColors && !nonLinear,
+      connectorStyleConfig,
+      lastStepIndex: stepsToRender.length - 1,
+    }),
+    [
+      activeStep,
+      hideConnectors,
+      nonLinear,
+      connectorStateColors,
+      connectorStyleConfig,
+    ]
+  );
+
   return (
     <StepperContext.Provider value={contextValue}>
-      <div
+      <div dir={dir}
         id="RFS-StepperContainer"
         className={clsx(classes.StepperContainer, className)}
         {...rest}

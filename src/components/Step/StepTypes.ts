@@ -24,11 +24,11 @@ export interface StepStyleDTO {
   fontWeight: React.ReactText;
 }
 
-export interface StepStyleProps extends StepStyleDTO, StepState {}
+export interface StepStyleProps extends StepStyleDTO, StepState { }
 
 export interface StepProps
   extends StepDTO,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
+  React.ButtonHTMLAttributes<HTMLButtonElement> {
   styleConfig?: StepStyleDTO;
   index?: number;
 }
