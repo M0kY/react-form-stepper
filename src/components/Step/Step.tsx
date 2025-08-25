@@ -91,6 +91,7 @@ const Step: React.FC<StepProps> = ({
           <StepLabel
             fontSize={styleConfig?.labelFontSize}
             fontWeight={styleConfig?.fontWeight}
+            labelColor={styleConfig?.labelColor}
           >
             {label}
           </StepLabel>
