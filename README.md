@@ -88,7 +88,7 @@ const StepperComponent = dynamic(() => import('./CustomStepper'), {
 
 | Props                | Options              | Default | Description                                                            |
 | -------------------- | -------------------- | ------- | ---------------------------------------------------------------------- |
-| steps                | \[StepsDTO\]         | none    | Array of objecst defining the steps                                    |
+| steps                | \[StepsDTO\]         | none    | Array of objects defining the steps                                    |
 | activeStep           | number               | 0       | Value defining the active step                                         |
 | connectorStateColors | boolean              | false   | Use different colors for connector lines based on adjacent steps state |
 | className            | string               | none    | Add css classes to the Stepper component                               |
