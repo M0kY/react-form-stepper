@@ -68,7 +68,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "rimraf": "3.0.2",
-    "semantic-release": "19.0.2",
+    "semantic-release": "19.0.3",
     "tsdx": "^0.14.0",
     "tslib": "2.5.0",
     "typescript": "^4.7.2"
